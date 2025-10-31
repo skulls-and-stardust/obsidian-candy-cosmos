@@ -1,0 +1,39 @@
+@use "../../references";
+
+:is(.workspace-tab-header-new-tab, .mobile-navbar-action-new-tab, .mobile-tab-switcher-menu-spacer:first-child) > .clickable-icon {
+    @include references.add-icon(var(--cc-icon-sparkle));
+}
+
+[aria-label="Search"] .workspace-tab-header-inner-icon, .mobile-navbar-action-quick-switcher > .clickable-icon, [aria-label="Show search filter"] {
+    @include references.add-icon(var(--cc-icon-telescope));
+}
+
+.search-input-container::before {
+    -webkit-mask-image: var(--cc-icon-telescope);
+    -webkit-mask-size: 100%;
+}
+
+.workspace-drawer-vault-switcher-icon {
+    @include references.add-icon(var(--cc-icon-rocket));
+}
+
+.workspace-drawer-vault-actions > span:first-child {
+    @include references.add-icon(var(--cc-icon-satellite));
+}
+
+.workspace-drawer-vault-actions > span:last-child, .workspace-drawer-header-icon.mod-settings {
+    @include references.add-icon(var(--cc-icon-orbit));
+}
+
+[aria-label="Navigate back"] {
+    @include references.add-icon(var(--cc-icon-arrow-left));
+}
+
+[aria-label="Navigate forward"] {
+    @include references.add-icon(var(--cc-icon-arrow-right));
+}
+
+.nav-buttons-container, [aria-label="Search settings"] {
+    --icon-color: var(--cc-accent-strong);
+    --icon-color-active: var(--text-muted);
+}

@@ -1,0 +1,10 @@
+[data-type="calendar"] table.calendar {
+    --color-text-today: var(--text-on-accent);
+    .today.svelte-q3wqg9 {
+        background-color: var(--color-accent);
+        font-weight: var(--font-bold);
+    }
+    .day.svelte-q3wqg9 {
+        border-radius: var(--radius-m);
+    }
+}

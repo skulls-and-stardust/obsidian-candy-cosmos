@@ -1,0 +1,43 @@
+[data-type="VIEW_TYPE_LONGFORM_EXPLORER"] {
+	--tab-background-active: var(--cc-accent-muted);
+	.tab-list {
+		display: flex;
+		justify-content: left;
+		padding-bottom: var(--size-4-2);
+
+		.tab-button {
+			background-color: transparent;
+			border-radius: var(--radius-m);
+			border: none;
+			padding: 0 0.75em 0 0.25em;
+			svg:hover {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.tab-panel-container.svelte-1v1mbat {
+		background-color: transparent;
+	}
+
+	#project-picker select[name="projects"] {
+		font-family: var(--cc-font-secondary);
+		font-weight: var(--cc-font-secondary-weight);
+		letter-spacing: var(--cc-font-secondary-spacing-letter);
+		word-spacing: var(--cc-font-secondary-spacing-word);
+	}
+
+	.longform-compile-step.svelte-yprjpc.svelte-yprjpc {
+		border-width: var(--border-width);
+		border-radius: var(--radius-m);
+	}
+
+	#scene-list .scene-container.svelte-u6nqd:hover {
+		background-color: var(--cc-accent-muted);
+	}
+
+	.drafts-title-container.svelte-db2avi button.svelte-db2avi, .options-button.svelte-1hf1yah.svelte-1hf1yah {
+		background-color: var(--color-accent);
+		color: var(--text-on-accent);
+	}
+}

@@ -1,0 +1,93 @@
+@mixin heading-style-01($color, $level) {
+    border-bottom: calc(var(--cc-heading-underline-width) + var(--cc-heading-depth)) solid transparent;
+    color: color-mix(in oklab, $color 40%, rgb(var(--mono-rgb-100)));
+    margin-left: calc(var(--file-margins) * -1) !important;
+    padding: 0.75em 1em 0.125em var(--file-margins);
+    position: relative;
+    text-shadow: 0 var(--cc-heading-depth) rgb(from $color r g b / var(--cc-alpha-1-2));
+    &:before {
+        content: "H" + $level + " ";
+        font-size: clamp(12px, 0.5em, 0.75em);
+        opacity: 0.5;
+    }
+    &:after {
+        background: linear-gradient(to right, $color, hsl(from $color calc(h + var(--cc-color-step)) s l));
+        border-radius: var(--cc-heading-underline-width);
+        bottom: calc(var(--cc-heading-underline-width) * -1);
+        box-shadow: 0 var(--cc-heading-depth) rgb(from $color r g b / var(--cc-alpha-1-2));
+        content: "";
+        height: var(--cc-heading-underline-width);
+        left: var(--size-4-1);
+        position: absolute;
+        width: calc(100% + (var(--file-margins) - var(--size-4-1)));
+    }
+}
+
+@mixin heading-style-02($color, $level) {
+    background: linear-gradient(to right,
+        rgb(from $color r g b / var(--cc-alpha-1-2)),
+        rgb(from hsl(from $color calc(h + var(--cc-color-step)) s l) r g b / var(--cc-alpha-1-2)));
+    border-left: var(--cc-border-l) dashed $color;
+    border-radius: 0 1em 1em 0;
+    color: color-mix(in oklab, $color 40%, rgb(var(--mono-rgb-100)) 60%);
+    text-align: right;
+    margin-left: calc((var(--file-margins) * -1) + var(--size-4-1)) !important;
+    padding: 0.125em 1em 0.125em var(--file-margins);
+    &:before {
+        content: "H" + $level + " ";
+        font-size: clamp(12px, 0.5em, 0.75em);
+        opacity: 0.5;
+    }
+}
+
+.cm-line.HyperMD-header, .inline-title:not([data-level]), h1, h2, h3, h4, h5, h6, .cm-strong, strong, .workspace-drawer-vault-name, .workspace-drawer-header-name, .setting-item-heading .setting-item-name, .callout-title, .vertical-tab-header-group-title {
+    font-family: var(--cc-font-secondary);
+    font-weight: var(--cc-font-secondary-weight);
+    letter-spacing: var(--cc-font-secondary-spacing-letter);
+    word-spacing: var(--cc-font-secondary-spacing-word);
+}
+
+.cm-line.HyperMD-header, h1, h2, h3, h4, h5, h6 {
+    --p-spacing: 0;
+}
+
+.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal {
+    --h1-color: var(--cc-accent-01);
+    --h2-color: var(--cc-accent-02);
+    --h3-color: var(--cc-accent-03);
+    --h4-color: var(--h3-color);
+    --h5-color: var(--h2-color);
+    --h6-color: var(--h1-color);
+}
+
+:is(.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal):not(.dictionary) :not(.callout-content) > :is(.HyperMD-header-1, h1) {
+    @include heading-style-01(var(--h1-color), "1");
+}
+
+:is(.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal) :not(.callout-content) > :is(.HyperMD-header-2, h2) {
+    @include heading-style-01(var(--h2-color), "2");
+    width: 90%;
+}
+
+:is(.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal) :not(.callout-content) > :is(.HyperMD-header-3, h3) {
+    @include heading-style-01(var(--h3-color), "3");
+    width: 80%;
+}
+
+:is(.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal) :not(.callout-content) > :is(.HyperMD-header-4, h4) {
+    @include heading-style-02(var(--h4-color), "4");
+    position: relative;
+    width: 70%;
+}
+
+:is(.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal) :not(.callout-content) > :is(.HyperMD-header-5, h5) {
+    @include heading-style-02(var(--h5-color), "5");
+    position: relative;
+    width: 60%;
+}
+
+:is(.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal) :not(.callout-content) > :is(.HyperMD-header-6, h6) {
+    @include heading-style-02(var(--h6-color), "6");
+    position: relative;
+    width: 50%;
+}

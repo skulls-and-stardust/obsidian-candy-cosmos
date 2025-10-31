@@ -1,0 +1,33 @@
+@use "../../references";
+
+.workspace-split {
+    gap: var(--cc-pane-gap-inner);
+}
+
+.workspace-leaf-content {
+    padding: var(--cc-pane-padding);
+}
+
+.workspace-tabs .workspace-leaf {
+    background-color: transparent;
+}
+
+.mod-root {
+    padding-bottom: calc(var(--cc-footer-height) + var(--cc-pane-gap-outer));
+    background-color: transparent !important;
+    margin: 0 var(--cc-pane-gap-outer);
+
+    .workspace-leaf {
+        border-radius: var(--cc-pane-radius);
+    }
+    .workspace-leaf-content {
+        background-color: transparent;
+    }
+    .view-header {
+        padding: calc((var(--cc-pane-radius) / 2) - var(--cc-pane-padding));
+        .view-header-nav-buttons, .view-actions {
+            display: flex;
+            gap: var(--cc-pane-gap-inner);
+        }
+    }
+}

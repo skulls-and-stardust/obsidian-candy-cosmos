@@ -1,0 +1,38 @@
+.cm-s-obsidian span.cm-link, .cm-s-obsidian span.cm-url {
+    text-decoration-line: none;
+    &:hover {
+        text-decoration-line: none;
+    }
+}
+
+a, span:is(.cm-link, .cm-hmd-internal-link) > a, .cm-hmd-external-link > a {
+    text-underline-offset: 0.2em;
+    transition: text-underline-offset 100ms ease-in-out;
+    &:hover {
+        text-underline-offset: 0.4em;
+    }
+}
+
+.metadata-property-value .internal-link, .markdown-rendered .internal-link, .cm-hmd-internal-link > a {
+    text-decoration-style: dashed;
+    transition: text-underline-offset 100ms ease-in-out;
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link:hover {
+    text-decoration: none;
+}
+
+.external-link {
+    background-image: none;
+    padding-inline-end: unset;
+    &:after {
+        aspect-ratio: 1;
+        background-color: currentColor;
+        content: "";
+        display: inline-block;
+        margin-left: 0.175em;
+        mask-image: url(public/images/6155340132a851f6089e.svg);
+        mask-repeat: no-repeat;
+        width: 0.825em;
+    }
+}

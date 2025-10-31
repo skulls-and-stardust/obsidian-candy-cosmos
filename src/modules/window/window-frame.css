@@ -1,0 +1,20 @@
+body {
+    background: var(--background-primary) var(--cc-background-window);
+}
+
+.titlebar-button-container.mod-left {
+    display: none;
+}
+
+.mod-linux .titlebar-button.mod-minimize:hover, .mod-windows .titlebar-button.mod-minimize:hover {
+    background-color: var(--cc-accent-02);
+    color: hsl(from var(--text-on-accent) calc(h + var(--cc-accent-02-h)));
+}
+
+.mod-linux .titlebar-button.mod-maximize:hover, .mod-windows .titlebar-button.mod-maximize:hover {
+    background-color: var(--cc-accent-03);
+}
+
+.mod-linux .titlebar-button.mod-close:hover, .mod-windows .titlebar-button.mod-close:hover {
+    background-color: var(--cc-accent-04);
+}

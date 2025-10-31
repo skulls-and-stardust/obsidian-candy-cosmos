@@ -1,0 +1,11 @@
+.inline-embed {
+    border-radius: var(--radius-l);
+    box-shadow: 0 var(--cc-input-depth) hsl(from var(--background-primary) h calc(s - 10) calc(l - 10)) inset;
+    .embed-title {
+        display: none;
+    }
+}
+
+.image-embed > img {
+    border-radius: var(--radius-m);
+}

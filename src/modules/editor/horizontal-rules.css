@@ -1,0 +1,7 @@
+hr:not(.workspace-leaf-resize-handle) {
+    border: none;
+	border-top: var(--hr-thickness) dotted;
+	border-color: var(--hr-color);
+	margin: 0 25% !important;
+	opacity: var(--cc-alpha-1-4);
+}

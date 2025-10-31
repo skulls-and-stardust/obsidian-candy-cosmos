@@ -1,0 +1,22 @@
+@use "../../references";
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    --icon-color: var(--text-on-accent);
+    
+    background: linear-gradient(to right, var(--cc-background-footer));
+    border-radius: 0 var(--cc-pane-radius) 0 0;
+    color: var(--text-on-accent);
+    height: var(--cc-footer-height);
+    margin-top: calc(var(--cc-pane-gap-outer) - var(--cc-pane-gap-inner));
+    width: calc(var(--cc-footer-sidebar-width) - 2.5vw);
+    z-index: var(--layer-status-bar);
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon {
+    color: var(--icon-color);
+}
+
+body:not(.is-mobile) .workspace-drawer-vault-name {
+    flex-grow: 1;
+    padding-left: var(--size-4-2);
+}

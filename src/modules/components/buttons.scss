@@ -1,0 +1,37 @@
+@mixin button {
+    --text-faint: var(--cc-accent-darker);
+    
+    aspect-ratio: 7/5;
+    background: var(--color-accent) radial-gradient(transparent, hsl(from var(--color-accent) h calc(s - 15) calc(l - 10)));
+    border-radius: var(--cc-button-radius);
+    box-shadow: var(--cc-button-box-shadow) !important;
+    color: rgb(from var(--text-on-accent) r g b / var(--cc-alpha-3-4));
+    cursor: pointer;
+    font-weight: var(--font-semibold);
+    height: calc(var(--input-height) - var(--cc-input-depth));
+    max-height: 24px;
+    transition: transform 100ms, box-shadow 100ms, background 50ms;
+    transform: translateY(-2px);
+    &:active:not([aria-disabled="true"]) {
+        background: hsl(from var(--color-accent) h calc(s - 15) calc(l - 10)) radial-gradient(transparent, hsl(from var(--color-accent) h calc(s - 25) calc(l - 20)));
+        box-shadow: 0 2px hsl(from var(--color-accent) h calc(s - 25) calc(l - 25)) !important;
+        transform: unset;
+    }
+    &:hover:not([aria-disabled="true"]) {
+        background-color: hsl(from var(--color-accent) h calc(s + 5) calc(l + 5));
+        &:active:not([aria-disabled="true"]) {
+            background: hsl(from var(--color-accent) h calc(s - 15) calc(l - 10)) radial-gradient(transparent, hsl(from var(--color-accent) h calc(s - 25) calc(l - 20)));
+        }
+    }
+    &[aria-disabled="true"] {
+        cursor: not-allowed;
+    }
+}
+
+:not(.calendarium-preset-container) > button:not(.clickable-icon, .mb-button-inner, .tab-button), .view-header .view-header-left .clickable-icon, .view-header .clickable-icon[aria-label="More options"] {
+    @include button;
+}
+
+.clickable-icon[aria-disabled='true'] {
+    opacity: var(--cc-alpha-1-2);
+}

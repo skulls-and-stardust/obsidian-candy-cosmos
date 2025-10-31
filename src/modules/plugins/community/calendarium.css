@@ -1,0 +1,12 @@
+[data-type="CALENDARIUM"] {
+    .day.svelte-1gh3owl.svelte-1gh3owl {
+        border-radius: var(--radius-m);
+        &.today {
+            background-color: var(--color-accent);
+            font-weight: var(--font-bold);
+            .day-number {
+                color: var(--text-on-accent);
+            }
+        }
+    }
+}

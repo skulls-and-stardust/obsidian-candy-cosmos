@@ -1,0 +1,7 @@
+.prompt {
+    background-color: var(--modal-background);
+}
+
+input.prompt-input:hover, input.prompt-input:focus, input.prompt-input:focus-visible {
+    border-bottom: var(--cc-style-01-border);
+}

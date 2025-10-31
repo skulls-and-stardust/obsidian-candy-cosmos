@@ -1,0 +1,49 @@
+.canvas-card-menu {
+    background-color: var(--cc-style-01-background);
+    border-radius: var(--size-4-3);
+    box-shadow: none;
+}
+
+.canvas-menu {
+    border-radius: var(--radius-m);
+    border-width: var(--cc-border-s);
+}
+
+.canvas-controls {
+    right: calc((var(--cc-pane-radius) / 2) - var(--cc-pane-padding));
+}
+
+.canvas-control-group {
+    border-radius: var(--cc-button-radius);
+    border: none;
+    box-shadow: var(--cc-button-box-shadow);
+    background-color: var(--cc-accent-darker);
+}
+
+.canvas-node {
+    --color-accent: rgb(var(--canvas-color));
+}
+
+.canvas-control-item {
+    --text-faint: var(--text-on-accent);
+
+    padding: var(--size-4-2);
+    background: var(--color-accent) radial-gradient(transparent, hsl(from var(--interactive-accent) h calc(s - 15) calc(l - 10)));
+    border-bottom-color: var(--cc-accent-dark);
+    color: var(--text-on-accent);
+    cursor: pointer;
+    &:active:not(.is-disabled) {
+        background-color: color-mix(in oklab, var(--color-accent) 80%, var(--color-base-00) 20%);
+        transform: translateY(2px);
+    }
+    &:hover:not(.is-disabled) {
+        background-color: color-mix(in oklab, var(--color-accent) 90%, white 10%);
+        &:active {
+            background-color: color-mix(in oklab, var(--color-accent) 80%, var(--color-base-00) 20%);
+        }
+    }
+    &.is-disabled {
+        cursor: not-allowed;
+        opacity: var(--cc-alpha-1-2);
+    }
+}

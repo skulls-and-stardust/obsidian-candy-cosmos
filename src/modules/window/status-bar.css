@@ -1,0 +1,7 @@
+.status-bar {
+    background: var(--status-bar-background);
+    font-weight: var(--font-bold);
+    height: var(--cc-footer-height);
+    justify-content: space-evenly;
+    width: calc(var(--cc-footer-sidebar-width) - 2.5vw);
+}

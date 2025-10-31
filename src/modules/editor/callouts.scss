@@ -1,0 +1,46 @@
+@property --callout-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: var(--color-accent);
+}
+
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:hover {
+    border-radius: var(--callout-radius);
+}
+
+.callout.is-collapsible .callout-title {
+    cursor: pointer;
+}
+
+.callout-content :is(h1, h2, h3, h4, h5, h6) {
+    margin-block-start: var(--p-spacing);
+    margin-block-end: 0;
+    letter-spacing: initial;
+    + p {
+        margin-block-start: calc(var(--p-spacing) / 2);
+    }
+}
+
+.callout-title-inner {
+    margin-left: var(--size-4-1);
+}
+
+.callout-fold svg.svg-icon {
+    --icon-stroke: var(--cc-collapse-stroke-width);
+}
+
+.callout-fold {
+    position: absolute;
+    right: var(--size-4-2);
+}
+
+.callout {
+    --color-accent: var(--callout-color);
+    background-color: rgb(from var(--color-accent) r g b / var(--cc-alpha-1-8));
+    border-color: rgb(from var(--callout-color) r g b / var(--callout-border-opacity));
+    position: relative;
+}
+
+.callout-title {
+    color: var(--callout-color);
+}

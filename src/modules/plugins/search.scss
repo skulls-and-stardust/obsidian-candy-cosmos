@@ -1,0 +1,40 @@
+@use "../../references";
+
+.search-results-info {
+    border-bottom: var(--cc-style-01-border);
+}
+
+.search-result-file-matches {
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0 var(--size-4-2);
+}
+
+.search-result-file-match {
+    background-color: var(--search-result-background);
+    border: none;
+    border-radius: var(--cc-nav-item-radius);
+    margin-bottom: var(--size-4-2);
+    margin-left: var(--nav-item-children-margin-start);
+    width: unset;
+}
+
+.suggestion-container {
+    background-color: var(--background-secondary);
+    border-width: var(--cc-border-s);
+    border-style: dashed;
+}
+
+.internal-query {
+    border-top: var(--cc-style-01-border);
+    padding-top: var(--size-4-2);
+}
+
+.internal-query .search-result-container {
+    background-color: transparent;
+    border: none;
+}
+
+.search-result:not(.is-collapsed) .search-result-file-title {
+    color: inherit;
+}

@@ -1,0 +1,8 @@
+.graph-controls {
+    border: none;
+    padding: 0;
+}
+
+.graph-control-section.mod-filter .tree-item-self {
+    width: 75%;
+}

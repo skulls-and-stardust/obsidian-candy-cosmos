@@ -1,0 +1,86 @@
+@use "../../references";
+
+.mod-root {
+    .workspace-tab-header-container {
+        padding-left: 0;
+        .workspace-tab-header {
+            padding: var(--cc-tab-header-padding);
+            .workspace-tab-header-inner {
+                padding: 0 var(--size-4-3);
+            }
+            &:before {
+                clip-path: inset(60% calc(var(--tab-curve) * -0.75) 0 50%);
+            }
+            &:after {
+                clip-path: inset(60% 50% 0 calc(var(--tab-curve) * -0.75));
+            }
+            &:not(.is-active) .workspace-tab-header-inner {
+                background-color: var(--cc-background-faint);
+                &:hover {
+                    background-color: rgb(from var(--background-primary) r g b / 0.75);
+                }
+            }
+        }
+    }
+}
+
+.mod-root .workspace-tab-header-container-inner {
+    padding: 0 var(--size-4-5) 0 var(--size-4-5);
+}
+
+.workspace-tab-header-new-tab {
+    flex-grow: 3;
+    margin-inline-start: calc(var(--size-4-4) * -1);
+    padding-left: 0;
+    .clickable-icon {
+        background-color: var(--cc-accent-medium);
+        border-radius: 50%;
+        color: var(--icon-color-active);
+        height: var(--size-4-8);
+        width: var(--size-4-8);
+        &:hover {
+            background-color: var(--cc-accent-strong);
+        }
+    }
+}
+
+body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
+    padding-left: 0;
+}
+
+body:not(.is-mobile) .mod-root .workspace-tabs .workspace-tab-header-container:has(.is-active:first-of-type) + .workspace-tab-container .workspace-leaf {
+    border-top-left-radius: 0;
+}
+
+body:not(.is-tablet) .workspace.is-left-sidedock-open .workspace-tabs .workspace-tab-header.is-active:first-of-type::before {
+    box-shadow: none;
+}
+
+.workspace-tab-header-spacer {
+    display: none;
+}
+
+.workspace-tab-header-container-inner {
+    flex-grow: 1;
+}
+
+/* stacked tabs */
+.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-new-tab {
+    flex-grow: 0;
+}
+
+.mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header:first-of-type {
+    border-top-left-radius: var(--cc-pane-radius);
+}
+
+.mod-root .workspace-tabs.mod-stacked .workspace-tab-header:not(:first-of-type) {
+    border-left: var(--cc-style-01-border);
+}
+
+.mod-root .workspace-tabs.mod-stacked .workspace-leaf {
+    border-top-left-radius: 0;
+}
+
+.mod-root .workspace-tabs.mod-stacked .workspace-leaf:not(:last-of-type) {
+    border-top-right-radius: 0;
+}

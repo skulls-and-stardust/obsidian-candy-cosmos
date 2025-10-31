@@ -1,0 +1,305 @@
+body {
+    /* components */
+    --checkbox-border-color: var(--cc-accent-02);
+    --checkbox-color: var(--cc-accent-02);
+    --checkbox-size: 16px;
+
+    --input-border-width: 0;
+
+    --modal-border-color: var(--background-modifier-border);
+    --modal-border-width: var(--cc-border-m);
+
+    --prompt-border-color: var(--cc-accent-medium);
+    --prompt-border-width: var(--cc-border-m);
+
+    --tab-container-background: transparent;
+    --tab-curve: calc(var(--cc-pane-radius) - 4px);
+    --tab-divider-color: transparent;
+    --tab-outline-width: 0;
+    --tab-radius: var(--cc-pane-radius);
+	--tab-radius-active: var(--cc-pane-radius) var(--cc-pane-radius) 0 0;
+    --tab-text-color-focused-active-current: var(--mono-rgb-100);
+    --tab-max-width: inherit;
+
+    --toggle-thumb-color: var(--text-on-accent);
+    --toggle-thumb-height: 15px;
+    --toggle-thumb-width: 17px;
+
+    /* editor */
+    --callout-border-width: var(--cc-border-l);
+    --callout-title-weight: var(--font-normal);
+    --callout-radius: var(--radius-xl);
+
+    --checkbox-color-hover: hsl(from var(--checkbox-color) h calc(s + 20) calc(l + 20));
+    --checklist-done-color: var(--cc-accent-02);
+
+    --embed-background: hsl(from var(--background-primary) h calc(s - 5) calc(l - 5));
+    --embed-border-end: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
+    --embed-border-start: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
+    --embed-border-top: var(--border-width) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
+    --embed-padding: var(--size-4-3);
+
+    --h1-font: var(--cc-font-secondary);
+    --h1-weight: var(--font-normal);
+    --h2-font: var(--cc-font-secondary);
+    --h2-weight: var(--font-normal);
+    --h3-font: var(--cc-font-secondary);
+    --h3-weight: var(--font-normal);
+    --h4-font: var(--cc-font-secondary);
+    --h4-weight: var(--font-normal);
+    --h5-font: var(--cc-font-secondary);
+    --h5-weight: var(--font-normal);
+    --h6-font: var(--cc-font-secondary);
+    --h6-weight: var(--font-normal);
+
+	--hr-thickness: 8px;
+
+    --inline-title-size: 3em;
+    --inline-title-variant: small-caps;
+
+    --link-decoration-thickness: 0.075em;
+
+    --metadata-background: var(--background-primary-alt);
+    --metadata-border-radius: var(--size-4-3);
+    --metadata-border-width: var(--border-radius);
+    --metadata-gap: var(--size-4-3);
+    --metadata-padding: var(--size-2-3);
+    --metadata-property-box-shadow-hover: 0 0 0 var(--cc-border-s) var(--background-modifier-border-hover);
+
+    --table-background: var(--cc-accent-faint);
+    --table-header-background: var(--cc-accent-medium);
+    --table-border-width: 0;
+
+    /* foundations */
+    --border-width: var(--cc-border-s);
+    
+    --font-interface-theme: var(--cc-font-primary);
+    --font-text-theme: var(--cc-font-primary);
+
+    --icon-stroke: 3px;
+    --icon-l-stroke-width: var(--icon-stroke);
+    --icon-opacity: 1;
+
+    --p-spacing-empty: var(--size-4-2);
+
+    /* plugins */
+    --bases-cards-background: var(--background-primary-alt);
+    --bases-cards-cover-background: var(--background-primary-alt);
+    --bases-cards-shadow: none;
+    --bases-cards-shadow-hover: none;
+    --bases-header-border-width: 0;
+
+    --graph-node-attachment: var(--cc-accent-02);
+    --graph-node-tag: var(--cc-accent-03);
+
+    --nav-collapse-icon-color: color-mix(in oklab, var(--color-accent) 50%, rgb(var(--mono-rgb-100)) 50%);
+    --nav-collapse-icon-color-collapsed: var(--nav-collapse-icon-color);
+
+    --nav-indentation-guide-width: 0px;
+
+    --nav-item-background-active: var(--cc-accent-strong);
+    --nav-item-background-hover: var(--cc-accent-medium);
+    --nav-item-background-selected: var(--cc-accent-medium);
+
+    --nav-item-color: color-mix(in oklab, var(--color-accent) 30%, light-dark(var(--color-base-70), rgb(var(--mono-rgb-100))) 70%);
+    --nav-item-color-active: var(--text-on-accent);
+    --nav-item-color-highlighted: var(--nav-item-color);
+    --nav-item-color-hover: var(--nav-item-color);
+    --nav-item-color-selected: var(--nav-item-color);
+
+    --nav-item-children-margin-start: var(--size-4-4);
+
+    --nav-item-parent-padding: 4px 8px 4px 8px;
+
+    --nav-item-weight: var(--font-semibold);
+    --nav-item-weight-hover: var(--nav-item-weight);
+    --nav-item-weight-active: var(--nav-item-weight);
+
+    /* window */
+    --divider-color: transparent;
+    --divider-vertical-height: calc(100% - var(--header-height) - var(--cc-footer-height));
+
+    --menu-border-width: var(--cc-border-s);
+
+    --ribbon-width: 0;
+    --ribbon-padding: 0;
+
+	--slider-thumb-border-width: var(--cc-border-s);
+
+    --status-bar-border-width: 0;
+    --status-bar-radius: var(--cc-pane-radius) 0 0 0;
+    --status-bar-text-color: var(--text-on-accent);
+
+    --vault-profile-font-size: var(--font-ui-large);
+    --vault-profile-font-weight: var(--font-normal);
+
+    &.is-mobile {
+        --border-width: var(--cc-border-s);
+        --file-margins: var(--size-4-4);
+        --mobile-sidebar-radius: var(--cc-pane-radius);
+    }
+}
+
+body.theme-light {
+    /* components */
+    --dropdown-background: var(--cc-accent-muted);
+
+    --input-shadow: none;
+    --input-shadow-hover: none;
+
+    /* editor */
+    --callout-bug: var(--color-red);
+    --callout-default: var(--color-accent);
+    --callout-error: var(--color-red);
+    --callout-example: var(--color-purple);
+    --callout-fail: var(--color-red);
+    --callout-important: var(--color-yellow);
+    --callout-info: var(--color-blue);
+    --callout-question: var(--color-orange);
+    --callout-success: var(--color-green);
+    --callout-summary: var(--color-cyan);
+    --callout-tip: var(--color-cyan);
+    --callout-todo: var(--color-blue);
+    --callout-warning: var(--color-yellow);
+    --callout-quote: var(--color-base-50);
+
+    --code-background: var(--cc-accent-faint);
+    --code-function: color-mix(in oklab, var(--color-yellow) var(--cc-alpha-3-4), var(--text-normal));
+    --code-important: color-mix(in oklab, var(--color-orange) var(--cc-alpha-3-4), var(--text-normal));
+    --code-keyword: color-mix(in oklab, var(--color-pink) var(--cc-alpha-3-4), var(--text-normal));
+    --code-function: color-mix(in oklab, var(--color-yellow) var(--cc-alpha-3-4), var(--text-normal));
+    --code-operator: color-mix(in oklab, var(--color-red) var(--cc-alpha-3-4), var(--text-normal));
+    --code-property: color-mix(in oklab, var(--color-cyan) var(--cc-alpha-3-4), var(--text-normal));
+    --code-string: color-mix(in oklab, var(--color-green) var(--cc-alpha-3-4), var(--text-normal));
+    --code-tag: color-mix(in oklab, var(--color-red) var(--cc-alpha-3-4), var(--text-normal));
+    --code-value: color-mix(in oklab, var(--color-purple) var(--cc-alpha-3-4), var(--text-normal));
+
+    --hr-color: var(--color-accent);
+
+    --tag-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
+	--tag-background-hover: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-3-4));
+	--tag-color: hsl(from var(--text-normal) var(--cc-accent-02-h) s l);
+	--tag-color-hover: color-mix(in oklab, var(--cc-accent-02) 10%, var(--color-base-100));
+
+    /* foundations */
+    --icon-color-active: var(--text-on-accent);
+    --icon-color-focused: var(--text-on-accent);
+    
+    /* plugins */
+    --canvas-background: transparent;
+    --canvas-color: 130, 94, 167;
+    --canvas-color-1: var(--color-red-rgb);
+    --canvas-color-2: var(--color-orange-rgb);
+    --canvas-color-3: var(--color-yellow-rgb);
+    --canvas-color-4: var(--color-green-rgb);
+    --canvas-color-5: var(--color-cyan-rgb);
+    --canvas-color-6: var(--color-blue-rgb);
+
+    --search-result-background: var(--cc-accent-muted);
+
+    /* window */
+    --ribbon-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
+
+    --scrollbar-thumb-bg: var(--cc-accent-faint);
+	--scrollbar-active-thumb-bg: var(--cc-accent-muted);
+
+    --status-bar-background: linear-gradient(to left, var(--cc-background-footer));
+
+    --titlebar-background: transparent;
+	--titlebar-background-focused: transparent;
+
+    --vault-profile-color: var(--text-on-accent);
+
+    &.is-mobile {
+        --mobile-sidebar-background: var(--background-primary);
+        --tag-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
+
+        .view-header-nav-buttons, .view-header .view-action {
+            --icon-color-active: var(--text-on-accent);
+            --icon-color-focused: var(--text-on-accent);
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body.theme-dark {
+        /* components */
+        --dropdown-background: var(--cc-accent-muted);
+
+        --input-shadow: none;
+        --input-shadow-hover: none;
+
+        /* editor */
+        --callout-bug: var(--color-red);
+        --callout-default: var(--color-accent);
+        --callout-error: var(--color-red);
+        --callout-example: var(--color-purple);
+        --callout-fail: var(--color-red);
+        --callout-important: var(--color-yellow);
+        --callout-info: var(--color-blue);
+        --callout-question: var(--color-orange);
+        --callout-success: var(--color-green);
+        --callout-summary: var(--color-cyan);
+        --callout-tip: var(--color-cyan);
+        --callout-todo: var(--color-blue);
+        --callout-warning: var(--color-yellow);
+        --callout-quote: var(--color-base-50);
+
+        --code-background: var(--cc-accent-faint);
+        --code-function: color-mix(in oklab, var(--color-yellow) var(--cc-alpha-3-4), var(--text-normal));
+        --code-important: color-mix(in oklab, var(--color-orange) var(--cc-alpha-3-4), var(--text-normal));
+        --code-keyword: color-mix(in oklab, var(--color-pink) var(--cc-alpha-3-4), var(--text-normal));
+        --code-function: color-mix(in oklab, var(--color-yellow) var(--cc-alpha-3-4), var(--text-normal));
+        --code-operator: color-mix(in oklab, var(--color-red) var(--cc-alpha-3-4), var(--text-normal));
+        --code-property: color-mix(in oklab, var(--color-cyan) var(--cc-alpha-3-4), var(--text-normal));
+        --code-string: color-mix(in oklab, var(--color-green) var(--cc-alpha-3-4), var(--text-normal));
+        --code-tag: color-mix(in oklab, var(--color-red) var(--cc-alpha-3-4), var(--text-normal));
+        --code-value: color-mix(in oklab, var(--color-purple) var(--cc-alpha-3-4), var(--text-normal));
+
+        --hr-color: var(--color-accent);
+
+        --tag-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
+        --tag-background-hover: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-3-4));
+        --tag-color: hsl(from var(--text-normal) var(--cc-accent-02-h) s l);
+        --tag-color-hover: color-mix(in oklab, var(--cc-accent-02) 10%, var(--color-base-100));
+
+        /* foundations */
+        --icon-color-active: var(--text-on-accent);
+        --icon-color-focused: var(--text-on-accent);
+
+        /* plugins */
+        --canvas-background: transparent;
+        --canvas-color: 130, 94, 167;
+        --canvas-color-1: var(--color-red-rgb);
+        --canvas-color-2: var(--color-orange-rgb);
+        --canvas-color-3: var(--color-yellow-rgb);
+        --canvas-color-4: var(--color-green-rgb);
+        --canvas-color-5: var(--color-cyan-rgb);
+        --canvas-color-6: var(--color-blue-rgb);
+
+        --search-result-background: var(--cc-accent-muted);
+
+        /* window */
+        --ribbon-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
+
+        --scrollbar-thumb-bg: var(--cc-accent-faint);
+	    --scrollbar-active-thumb-bg: var(--cc-accent-muted);
+
+        --status-bar-background: linear-gradient(to left, var(--cc-background-footer));
+
+        --titlebar-background: transparent;
+	    --titlebar-background-focused: transparent;
+
+        --vault-profile-color: var(--text-on-accent);
+
+        &.is-mobile {
+            --mobile-sidebar-background: var(--background-primary);
+            --tag-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
+
+            .view-header-nav-buttons, .view-header .view-action {
+                --icon-color-active: var(--text-on-accent);
+                --icon-color-focused: var(--text-on-accent);
+            }
+        }
+    }
+}

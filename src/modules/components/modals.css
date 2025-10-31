@@ -1,0 +1,113 @@
+/* general */
+.modal {
+    border-radius: var(--cc-pane-radius);
+    box-shadow: none !important;
+    filter: drop-shadow(0 0 36px var(--cc-background-faint));
+}
+
+.modal.mod-settings {
+    background-color: transparent;
+    border: none;
+}
+
+.setting-item:not(.setting-item-heading) {
+    border: none;
+    background-color: var(--background-secondary-alt);
+    border-radius: var(--radius-m);
+    margin-top: 8px;
+    padding: var(--size-4-2);
+}
+
+.modal-bg {
+    background: var(--cc-gradient-right);
+}
+
+.modal-content {
+    gap: var(--cc-pane-gap-inner);
+}
+
+.modal-sidebar {
+    --background-modifier-form-field: var(--cc-accent-faint);
+    
+    background-color: var(--background-primary);
+}
+
+.modal.mod-settings .vertical-tab-header {
+    backdrop-filter: var(--cc-filter);
+    background-color: var(--cc-background-menu);
+    border: var(--cc-style-01-border);
+    border-radius: var(--cc-pane-radius);
+}
+
+.modal .vertical-tab-content {
+    border: 3px solid var(--cc-accent-medium);
+    border-radius: var(--cc-pane-radius);
+}
+
+.setting-item-heading {
+    padding-bottom: 0;
+}
+
+.vertical-tab-header-group-title {
+    color: var(--text-muted);
+    font-size: var(--font-ui-medium);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.modal-close-button {
+    border-radius: 50%;
+    color: var(--color-accent);
+    display: block;
+    font-size: 36px;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    width: 36px;
+    &:before {
+        display: block;
+        font-family: var(--cc-font-secondary);
+        font-weight: var(--font-bold);
+        text-align: center;
+    }
+}
+
+/* menus */
+.menu {
+    backdrop-filter: var(--cc-filter);
+    background-color: var(--cc-background-menu);
+    border: var(--cc-style-01-border);
+}
+
+.menu-separator {
+    border-color: transparent;
+}
+
+/* community modal */
+.mod-community-modal .modal-sidebar .setting-item {
+    background-color: transparent;
+}
+
+body:not(.is-phone) .community-item.is-selected, body:not(.is-phone) .community-item.is-selected:hover {
+    color: var(--text-normal);
+}
+
+body:not(.is-phone) .community-item.is-selected .community-item-author, body:not(.is-phone) .community-item.is-selected:hover .community-item-author, body:not(.is-phone) .community-item.is-selected .community-item-repo, body:not(.is-phone) .community-item.is-selected:hover .community-item-repo, body:not(.is-phone) .community-item.is-selected .community-item-downloads, body:not(.is-phone) .community-item.is-selected:hover .community-item-downloads, body:not(.is-phone) .community-item.is-selected .community-item-updated, body:not(.is-phone) .community-item.is-selected:hover .community-item-updated {
+    color: var(--text-muted);
+}
+
+.community-item-screenshot {
+    border: var(--cc-style-01-border);
+}
+
+.community-item {
+    background-color: var(--background-secondary-alt);
+    border: none;
+    &:hover {
+        background-color: var(--cc-accent-muted);
+    }
+}
+
+body:not(.is-phone) .community-item.is-selected, body:not(.is-phone) .community-item.is-selected:hover {
+    background-color: var(--cc-accent-medium);
+}

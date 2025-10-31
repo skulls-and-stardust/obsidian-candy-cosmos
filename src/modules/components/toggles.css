@@ -1,0 +1,12 @@
+.checkbox-container {
+    background-color: var(--background-modifier-border);
+    box-shadow: 0 var(--cc-input-depth) rgb(from var(--cc-color-black) r g b / 0.33) inset;
+    height: calc(var(--toggle-thumb-height) + (var(--toggle-border-width) * 2) + 2px);
+    &:after {
+        box-shadow: 0 var(--cc-input-depth) hsl(from var(--toggle-thumb-color) h calc(s - 15) calc(l - 15));
+        top: calc(var(--cc-input-depth) / -2);
+    }
+    &:hover {
+        box-shadow: 0 var(--cc-input-depth) rgb(from var(--cc-color-black) r g b / 0.33) inset;
+    }
+}

@@ -1,0 +1,36 @@
+/* unordered */
+.list-bullet::after {
+	content: "X";
+	font-size: 0.75em;
+	border: none;
+	border-radius: 0;
+	background: none;
+	width: -7px;
+	height: initial;
+	position: relative;
+	right: 7px;
+}
+.cm-hmd-list-indent:has(> span:nth-child(odd):last-child) ~ .cm-formatting > .list-bullet::after {
+	color: transparent;
+	-webkit-text-stroke: 0.15em var(--list-marker-color);
+}
+
+.list-bullet::after, .cm-formatting-list-ol, ol > li::marker {
+	font-family: var(--cc-font-secondary);
+	margin-right: var(--size-4-1);
+	position: inherit;
+}
+
+/* checkbox */
+input[type="checkbox"] {
+	border-width: var(--cc-border-s);
+}
+
+input[type=checkbox]:checked:after {
+	top: calc(var(--cc-border-s) * -1);
+	inset-inline-start: calc(var(--cc-border-s) * -1);
+}
+
+.HyperMD-task-line {
+	color: color-mix(in oklab, var(--checkbox-color) 40%, white);
+}

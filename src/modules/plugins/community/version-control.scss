@@ -1,0 +1,62 @@
+[data-type="version-control-view"] {
+    .view-content {
+        padding: 0;
+    }
+
+    .v-header-wrapper {
+        background-color: transparent;
+        border: none;
+    }
+
+    .v-history-list-container {
+        padding: 0 var(--size-4-2);
+    }
+
+    .v-history-entry {
+        background-color: var(--background-secondary-alt);
+        border: var(--border-width) dashed var(--background-modifier-border);
+        &:hover {
+            border-color: var(--cc-accent-strong);
+        }
+    }
+
+    .v-entry-footer {
+        justify-content: center;
+    }
+
+    .v-fab-save-button {
+        &:hover {
+            transform: none;
+        }
+    }
+
+    .v-panel-container, .v-settings-panel {
+        border: var(--border-width) solid var(--background-modifier-border);
+        border-radius: var(--radius-l);
+        height: calc(100% - var(--size-4-2));
+        left: var(--size-4-1);
+        top: var(--size-4-1);
+        width: calc(100% - var(--size-4-2));
+    }
+
+    .v-panel-container.is-drawer-like {
+        padding: 0;
+        .v-inline-panel.is-drawer {
+            border-radius: var(--radius-l);
+            width: 100%;
+        }
+    }
+
+    .v-action-panel-filter {
+        border: none;
+    }
+
+    .v-action-panel-item {
+        border: none;
+        background-color: var(--cc-accent-faint);
+    }
+
+    .setting-item {
+        flex-wrap: wrap;
+    }
+}

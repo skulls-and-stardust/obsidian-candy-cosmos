@@ -1,0 +1,4 @@
+.bases-cards-item:hover {
+    background-color: var(--cc-accent-muted);
+    transition: background-color var(--anim-duration-fast);
+}

@@ -1,0 +1,38 @@
+@use "../../components/buttons";
+
+[data-type="timer-view"] {
+	--pomodoro-timer-color: var(--cc-accent-muted);
+
+	.timer-display {
+		font-family: var(--cc-font-secondary);
+		font-weight: var(--cc-font-secondary-weight);
+		letter-spacing: var(--cc-font-secondary-spacing-letter);
+		word-spacing: var(--cc-font-secondary-spacing-word);
+		.status.svelte-1bkzjfd {
+			color: var(--text-faint);
+			font-size: 1rem;
+		}
+		.breath.svelte-1bkzjfd {
+			left: 30%;
+			margin-top: 0.5em;
+			border-radius: 50%;
+			width: 6px;
+			height: 6px;
+		}
+
+		.timer-text.svelte-1bkzjfd {
+			font-size: 1.5em;
+			font-weight: var(--cc-font-secondary-weight);
+		}
+	}
+	
+	.btn-group.svelte-1bkzjfd .control {
+		@include buttons.button;
+		height: 24px;
+	}
+
+	.pomodoro-tasks-wrapper.svelte-1ipipwe.svelte-1ipipwe.svelte-1ipipwe, .pomodoro-settings-wrapper.svelte-5jyrhn.svelte-5jyrhn {
+		border-width: var(--border-width);
+		border-radius: var(--radius-m);
+	}
+}

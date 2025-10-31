@@ -1,0 +1,13 @@
+.tree-item-self .iconic-icon {
+    --icon-size: var(--icon-m);
+    color: color-mix(in oklab, var(--color-accent) 50%, rgb(var(--mono-rgb-100)) 50%);
+    width: var(--icon-size);
+}
+
+.tree-item-self .iconic-icon svg.svg-icon:not(.right-triangle) {
+    --icon-size: var(--icon-m);
+}
+
+.tree-item-self .iconic-icon {
+    color: inherit;
+}

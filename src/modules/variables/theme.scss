@@ -1,0 +1,185 @@
+@use "../../references";
+
+body {
+    /* components */
+    --cc-button-radius: var(--radius-l);
+
+    --cc-input-depth: 3px;
+
+    --cc-nav-folder-border-width: var(--cc-border-s);
+    --cc-nav-folder-radius: var(--radius-m);
+    --cc-nav-item-radius: var(--radius-l);
+
+    --cc-tab-header-padding: 0 var(--size-4-1) var(--size-4-1);
+
+    /* editor */
+    --cc-heading-depth: 0.1em;
+    --cc-heading-underline-width: var(--cc-border-l);
+
+    /* foundations */
+    --cc-alpha-1-8: 12.5%;
+    --cc-alpha-1-4: 25%;
+    --cc-alpha-1-2: 50%;
+    --cc-alpha-3-4: 75%;
+
+    --cc-border-s: 2px;
+    --cc-border-m: 3px;
+    --cc-border-l: 4px;
+
+    --cc-font-primary: "Comfortaa";
+    --cc-font-primary-spacing-letter: 0.05em;
+    --cc-font-secondary: "CherryBombOne";
+    --cc-font-secondary-spacing-letter: 0.05em;
+    --cc-font-secondary-spacing-word: 0.15em;
+    --cc-font-secondary-weight: var(--font-normal);
+
+    --cc-icon-arrow-left: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LWJpZy1sZWZ0LWljb24gbHVjaWRlLWFycm93LWJpZy1sZWZ0Ij48cGF0aCBkPSJNMTMgOWExIDEgMCAwIDEtMS0xVjUuMDYxYTEgMSAwIDAgMC0xLjgxMS0uNzVsLTYuODM1IDYuODM2YTEuMjA3IDEuMjA3IDAgMCAwIDAgMS43MDdsNi44MzUgNi44MzVhMSAxIDAgMCAwIDEuODExLS43NVYxNmExIDEgMCAwIDEgMS0xaDZhMSAxIDAgMCAwIDEtMXYtNGExIDEgMCAwIDAtMS0xeiIvPjwvc3ZnPg==");
+    --cc-icon-arrow-right: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LWJpZy1yaWdodC1pY29uIGx1Y2lkZS1hcnJvdy1iaWctcmlnaHQiPjxwYXRoIGQ9Ik0xMSA5YTEgMSAwIDAgMCAxLTFWNS4wNjFhMSAxIDAgMCAxIDEuODExLS43NWw2LjgzNiA2LjgzNmExLjIwNyAxLjIwNyAwIDAgMSAwIDEuNzA3bC02LjgzNiA2LjgzNWExIDEgMCAwIDEtMS44MTEtLjc1VjE2YTEgMSAwIDAgMC0xLTFINWExIDEgMCAwIDEtMS0xdi00YTEgMSAwIDAgMSAxLTF6Ii8+PC9zdmc+");
+    --cc-icon-orbit: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW9yYml0LWljb24gbHVjaWRlLW9yYml0Ij48cGF0aCBkPSJNMjAuMzQxIDYuNDg0QTEwIDEwIDAgMCAxIDEwLjI2NiAyMS44NSIvPjxwYXRoIGQ9Ik0zLjY1OSAxNy41MTZBMTAgMTAgMCAwIDEgMTMuNzQgMi4xNTIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIi8+PGNpcmNsZSBjeD0iMTkiIGN5PSI1IiByPSIyIi8+PGNpcmNsZSBjeD0iNSIgY3k9IjE5IiByPSIyIi8+PC9zdmc+");
+    --cc-icon-rocket: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXJvY2tldC1pY29uIGx1Y2lkZS1yb2NrZXQiPjxwYXRoIGQ9Ik00LjUgMTYuNWMtMS41IDEuMjYtMiA1LTIgNXMzLjc0LS41IDUtMmMuNzEtLjg0LjctMi4xMy0uMDktMi45MWEyLjE4IDIuMTggMCAwIDAtMi45MS0uMDl6Ii8+PHBhdGggZD0ibTEyIDE1LTMtM2EyMiAyMiAwIDAgMSAyLTMuOTVBMTIuODggMTIuODggMCAwIDEgMjIgMmMwIDIuNzItLjc4IDcuNS02IDExYTIyLjM1IDIyLjM1IDAgMCAxLTQgMnoiLz48cGF0aCBkPSJNOSAxMkg0cy41NS0zLjAzIDItNGMxLjYyLTEuMDggNSAwIDUgMCIvPjxwYXRoIGQ9Ik0xMiAxNXY1czMuMDMtLjU1IDQtMmMxLjA4LTEuNjIgMC01IDAtNSIvPjwvc3ZnPg==");
+    --cc-icon-satellite: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNhdGVsbGl0ZS1pY29uIGx1Y2lkZS1zYXRlbGxpdGUiPjxwYXRoIGQ9Im0xMy41IDYuNS0zLjE0OC0zLjE0OGExLjIwNSAxLjIwNSAwIDAgMC0xLjcwNCAwTDYuMzUyIDUuNjQ4YTEuMjA1IDEuMjA1IDAgMCAwIDAgMS43MDRMOS41IDEwLjUiLz48cGF0aCBkPSJNMTYuNSA3LjUgMTkgNSIvPjxwYXRoIGQ9Im0xNy41IDEwLjUgMy4xNDggMy4xNDhhMS4yMDUgMS4yMDUgMCAwIDEgMCAxLjcwNGwtMi4yOTYgMi4yOTZhMS4yMDUgMS4yMDUgMCAwIDEtMS43MDQgMEwxMy41IDE0LjUiLz48cGF0aCBkPSJNOSAyMWE2IDYgMCAwIDAtNi02Ii8+PHBhdGggZD0iTTkuMzUyIDEwLjY0OGExLjIwNSAxLjIwNSAwIDAgMCAwIDEuNzA0bDIuMjk2IDIuMjk2YTEuMjA1IDEuMjA1IDAgMCAwIDEuNzA0IDBsNC4yOTYtNC4yOTZhMS4yMDUgMS4yMDUgMCAwIDAgMC0xLjcwNGwtMi4yOTYtMi4yOTZhMS4yMDUgMS4yMDUgMCAwIDAtMS43MDQgMHoiLz48L3N2Zz4=");
+    --cc-icon-sparkle: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNwYXJrbGUtaWNvbiBsdWNpZGUtc3BhcmtsZSI+PHBhdGggZD0iTTExLjAxNyAyLjgxNGExIDEgMCAwIDEgMS45NjYgMGwxLjA1MSA1LjU1OGEyIDIgMCAwIDAgMS41OTQgMS41OTRsNS41NTggMS4wNTFhMSAxIDAgMCAxIDAgMS45NjZsLTUuNTU4IDEuMDUxYTIgMiAwIDAgMC0xLjU5NCAxLjU5NGwtMS4wNTEgNS41NThhMSAxIDAgMCAxLTEuOTY2IDBsLTEuMDUxLTUuNTU4YTIgMiAwIDAgMC0xLjU5NC0xLjU5NGwtNS41NTgtMS4wNTFhMSAxIDAgMCAxIDAtMS45NjZsNS41NTgtMS4wNTFhMiAyIDAgMCAwIDEuNTk0LTEuNTk0eiIvPjwvc3ZnPg==");
+    --cc-icon-sparkles: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-sparkles-icon lucide-sparkles'><path d='M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z'/><path d='M20 2v4'/><path d='M22 4h-4'/><circle cx='4' cy='20' r='2'/></svg>");
+    --cc-icon-telescope: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXRlbGVzY29wZS1pY29uIGx1Y2lkZS10ZWxlc2NvcGUiPjxwYXRoIGQ9Im0xMC4wNjUgMTIuNDkzLTYuMTggMS4zMThhLjkzNC45MzQgMCAwIDEtMS4xMDgtLjcwMmwtLjUzNy0yLjE1YTEuMDcgMS4wNyAwIDAgMSAuNjkxLTEuMjY1bDEzLjUwNC00LjQ0Ii8+PHBhdGggZD0ibTEzLjU2IDExLjc0NyA0LjMzMi0uOTI0Ii8+PHBhdGggZD0ibTE2IDIxLTMuMTA1LTYuMjEiLz48cGF0aCBkPSJNMTYuNDg1IDUuOTRhMiAyIDAgMCAxIDEuNDU1LTIuNDI1bDEuMDktLjI3MmExIDEgMCAwIDEgMS4yMTIuNzI3bDEuNTE1IDYuMDZhMSAxIDAgMCAxLS43MjcgMS4yMTNsLTEuMDkuMjcyYTIgMiAwIDAgMS0yLjQyNS0xLjQ1NXoiLz48cGF0aCBkPSJtNi4xNTggOC42MzMgMS4xMTQgNC40NTYiLz48cGF0aCBkPSJtOCAyMSAzLjEwNS02LjIxIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMyIgcj0iMiIvPjwvc3ZnPg==");
+
+    /* plugins */
+    --cc-collapse-stroke-width: 6px;
+
+    /* window */
+    --cc-footer-gap: var(--size-4-1);
+    --cc-footer-height: var(--size-4-9);
+    --cc-footer-sidebar-width: 27.5vw;
+
+    --cc-pane-gap-inner: var(--size-4-2);
+    --cc-pane-gap-outer: var(--size-4-3);
+    --cc-pane-padding: var(--size-4-1);
+    --cc-pane-radius: 24px;
+
+    --cc-sidebar-radius: var(--cc-pane-radius);
+    --cc-sidebar-tab-radius: var(--radius-s) var(--radius-s) 0 0;
+
+    &.is-mobile {
+        --cc-footer-height: 0px;
+    }
+}
+
+body.theme-light {
+    /* components */
+    --cc-button-box-shadow: 0 var(--cc-input-depth) var(--cc-accent-darker);
+    
+    /* editor */
+    /* foundations */
+    --cc-accent-01: var(--color-accent);
+    --cc-accent-02: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 1)) s l);
+    --cc-accent-02-h: calc(var(--accent-h) + (var(--cc-color-step) * 1));
+    --cc-accent-03: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 2)) s l);
+    --cc-accent-03-h: calc(var(--accent-h) + (var(--cc-color-step) * 2));
+    --cc-accent-04: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 3)) s l);
+    --cc-accent-04-h: calc(var(--accent-h) + (var(--cc-color-step) * 3));
+    --cc-accent-05: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 4)) s l);
+    --cc-accent-05-h: calc(var(--accent-h) + (var(--cc-color-step) * 4));
+
+    --cc-accent-dark: hsl(from var(--color-accent) h calc(s - 15) calc(l - 10));
+    --cc-accent-darker: hsl(from var(--color-accent) h calc(s - 25) calc(l - 25));
+
+    @include references.colors-accent;
+
+    --cc-background-faint: rgb(from var(--background-primary) r g b / var(--cc-alpha-1-2));
+    --cc-background-muted: rgb(from var(--background-primary) r g b / var(--cc-alpha-3-4));
+
+    --cc-color-step: 30;
+    --cc-color-black: color-mix(in oklab, #21083b 90%, var(--cc-accent-01));
+    --cc-color-white: hsl(from var(--cc-accent-01) h 90 90);
+
+    --cc-gradient-right: linear-gradient(to right,
+        color-mix(in oklab, var(--cc-accent-01) 30%, var(--color-base-00)),
+        color-mix(in oklab, var(--cc-accent-02) 30%, var(--color-base-00)),
+        color-mix(in oklab, var(--cc-accent-03) 30%, var(--color-base-00)),
+        color-mix(in oklab, var(--cc-accent-04) 30%, var(--color-base-00)));
+    --cc-gradient-center: linear-gradient(to right,
+        rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-4)),
+        rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-4)),
+        rgb(from var(--cc-accent-03) r g b / var(--cc-alpha-1-4)),
+        rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-4)),
+        rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-4)));
+
+    --cc-filter: blur(12px) contrast(75%);
+
+    --cc-style-01-background: var(--cc-accent-faint);
+    --cc-style-01-border: var(--cc-border-m) dashed var(--background-modifier-border);
+
+    /* plugins */
+    /* window */
+    --cc-background-footer: color-mix(in oklab, var(--color-accent) 60%, var(--background-primary)), color-mix(in oklab, var(--cc-accent-02) 60%, var(--background-primary));
+    --cc-background-menu: var(--cc-accent-muted);
+    --cc-background-window: var(--background-modifier-cover);
+
+    --cc-sidebar-background: var(--background-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+    body.theme-dark {
+        /* components */
+        --cc-button-box-shadow: 0 var(--cc-input-depth) var(--cc-accent-darker);
+
+        /* editor */
+        /* foundations */
+        --cc-accent-01: var(--color-accent);
+        --cc-accent-02: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 1)) s l);
+        --cc-accent-02-h: calc(var(--accent-h) + (var(--cc-color-step) * 1));
+        --cc-accent-03: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 2)) s l);
+        --cc-accent-03-h: calc(var(--accent-h) + (var(--cc-color-step) * 2));
+        --cc-accent-04: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 3)) s l);
+        --cc-accent-04-h: calc(var(--accent-h) + (var(--cc-color-step) * 3));
+        --cc-accent-05: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 4)) s l);
+        --cc-accent-05-h: calc(var(--accent-h) + (var(--cc-color-step) * 4));
+
+        --cc-accent-dark: hsl(from var(--color-accent) h calc(s - 15) calc(l - 10));
+        --cc-accent-darker: hsl(from var(--color-accent) h calc(s - 25) calc(l - 25));
+
+        @include references.colors-accent;
+
+        --cc-background-faint: rgb(from var(--background-primary) r g b / var(--cc-alpha-1-2));
+        --cc-background-muted: rgb(from var(--background-primary) r g b / var(--cc-alpha-3-4));
+
+        --cc-color-step: 30;
+        --cc-color-black: color-mix(in oklab, #21083b 90%, var(--cc-accent-01));
+        --cc-color-white: hsl(from var(--cc-accent-01) h 90 90);
+
+        --cc-gradient-center: linear-gradient(to right,
+            rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-4)),
+            rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-4)),
+            rgb(from var(--cc-accent-03) r g b / var(--cc-alpha-1-4)),
+            rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-4)),
+            rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-4)));
+        --cc-gradient-right: linear-gradient(to right,
+            color-mix(in oklab, var(--cc-accent-01) 30%, var(--color-base-00)),
+            color-mix(in oklab, var(--cc-accent-02) 30%, var(--color-base-00)),
+            color-mix(in oklab, var(--cc-accent-03) 30%, var(--color-base-00)),
+            color-mix(in oklab, var(--cc-accent-04) 30%, var(--color-base-00)));
+
+        --cc-filter: blur(12px) contrast(75%) brightness(75%);
+
+        --cc-style-01-background: var(--cc-accent-faint);
+        --cc-style-01-border: var(--cc-border-m) dashed var(--background-modifier-border);
+
+        /* plugins */
+        /* window */
+        --cc-background-footer: color-mix(in oklab, var(--color-accent) 60%, var(--background-primary)), color-mix(in oklab, var(--cc-accent-02) 60%, var(--background-primary));
+        --cc-background-menu: var(--cc-accent-muted);
+        --cc-background-window: var(--background-modifier-cover);
+
+        --cc-footer-background: none;
+
+        --cc-sidebar-background: var(--background-primary);
+
+        &.is-phone {
+            --cc-gradient-center: linear-gradient(to bottom,
+                rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-4)),
+                rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-4)),
+                rgb(from var(--cc-accent-03) r g b / var(--cc-alpha-1-4)),
+                rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-4)),
+                rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-4)));
+        }
+    }
+}

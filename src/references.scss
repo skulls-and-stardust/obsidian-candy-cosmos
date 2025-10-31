@@ -1,0 +1,31 @@
+@mixin background-modifiers {
+    --background-modifier-border: var(--cc-accent-medium);
+    --background-modifier-border-hover: var(--cc-accent-strong);
+    --background-modifier-cover: var(--cc-gradient-center);
+    --background-modifier-form-field: var(--cc-accent-faint);
+    --background-modifier-form-field-hover: var(--cc-accent-muted);
+    --background-modifier-hover: var(--cc-accent-medium);
+    --background-modifier-message: var(--text-normal);
+}
+
+@mixin colors-accent {
+    --cc-accent-faint: rgb(from var(--color-accent) r g b / var(--cc-alpha-1-8));
+    --cc-accent-muted: rgb(from var(--color-accent) r g b / var(--cc-alpha-1-4));
+    --cc-accent-medium: rgb(from var(--color-accent) r g b / var(--cc-alpha-1-2));
+    --cc-accent-strong: rgb(from var(--color-accent) r g b / var(--cc-alpha-3-4));
+}
+
+@mixin add-icon($url) {
+    svg {
+        display: none;
+    }
+    &:after {
+        aspect-ratio: 1;
+        background-color: currentColor;
+        content: "";
+        height: var(--size-4-6);
+        mask: $url no-repeat;
+        mask-size: 100%;
+        opacity: var(--icon-opacity);
+    }
+}
