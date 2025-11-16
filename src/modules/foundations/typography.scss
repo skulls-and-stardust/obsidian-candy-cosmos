@@ -17,22 +17,3 @@ mark {
     background-color: var(--text-highlight-bg);
     color: var(--text-normal);
 }
-
-.markdown-source-view.mod-cm6 .cm-content .cm-active {
-    background-color: var(--cc-accent-faint);
-    border-radius: 2px;
-    &:before {
-        color: var(--color-accent);
-        content: ">";
-        font-family: var(--cc-font-secondary);
-        font-size: 0.9em;
-        left: -1em;
-        opacity: var(--cc-alpha-1-2);
-        position: absolute;
-    }
-}
-
-.cm-lineNumbers {
-    color: var(--cc-accent-medium);
-    font-family: var(--cc-font-secondary);
-}

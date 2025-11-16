@@ -47,21 +47,14 @@ body.theme-light {
     @include references.background-modifiers;
 
     /* text colors */
-    --bold-color: color-mix(in oklab, var(--cc-accent-03) var(--cc-alpha-3-4), var(--text-normal));
-    --italic-color: color-mix(in oklab, var(--color-accent) var(--cc-alpha-3-4), var(--text-normal));
-    --text-error: color-mix(in oklab, var(--color-red) var(--cc-alpha-3-4), var(--text-normal));
+    --bold-color: color-mix(in oklab, var(--cc-accent-03) 75%, var(--text-normal) 25%);
+    --italic-color: color-mix(in oklab, var(--color-accent) 75%, var(--text-normal) 25%);
     --text-highlight-bg: var(--cc-accent-muted);
     --text-on-accent: hsl(from var(--color-accent) h 95 95);
     --text-on-accent-inverted: hsl(from var(--color-accent) h 25 25);
-    --text-success: color-mix(in oklab, var(--color-green) var(--cc-alpha-3-4), var(--text-normal));
-    --text-warning: color-mix(in oklab, var(--color-orange) var(--cc-alpha-3-4), var(--text-normal));
 
     &.is-mobile {
         --background-modifier-cover: var(--cc-gradient-center);
-
-        --color-base-00: var(--cc-color-white);
-        --color-base-10: hsl(from var(--color-accent) h 60 70);
-        --color-base-20: hsl(from var(--color-accent) h 50 60);
 
         --titlebar-background: transparent;
         --titlebar-background-focused: transparent;
@@ -110,27 +103,24 @@ body.theme-light {
         /* surface colors */
         --background-primary: var(--color-base-00);
 		--background-primary-alt: var(--cc-accent-faint);
-        --background-secondary: color-mix(in oklab, var(--background-primary) 75%, var(--color-accent));
+        --background-secondary: color-mix(in oklab, var(--background-primary) 75%, var(--color-accent) 25%);
 		--background-secondary-alt: var(--cc-accent-faint);
 
         @include references.background-modifiers;
 
         /* text colors */
-        --bold-color: color-mix(in oklab, var(--cc-accent-03) var(--cc-alpha-3-4), var(--text-normal));
-        --italic-color: color-mix(in oklab, var(--color-accent) var(--cc-alpha-3-4), var(--text-normal));
-        --text-error: color-mix(in oklab, var(--color-red) var(--cc-alpha-3-4), var(--text-normal));
+        --bold-color: color-mix(in oklab, var(--cc-accent-03) 75%, var(--text-normal) 25%);
+        --italic-color: color-mix(in oklab, var(--color-accent) 75%, var(--text-normal) 25%);
         --text-highlight-bg: var(--cc-accent-muted);
         --text-on-accent: hsl(from var(--color-accent) h 90 90);
         --text-on-accent-inverted: hsl(from var(--color-accent) h 20 20);
-        --text-success: color-mix(in oklab, var(--color-green) var(--cc-alpha-3-4), var(--text-normal));
-        --text-warning: color-mix(in oklab, var(--color-orange) var(--cc-alpha-3-4), var(--text-normal));
 
         &.is-mobile {
-            --background-modifier-cover: var(--cc-gradient-center);
-
             --color-base-00: var(--cc-color-black);
-            --color-base-10: hsl(from var(--color-base-00) h s calc(l + 10));
-            --color-base-20: hsl(from var(--color-base-00) h calc(s - 10) calc(l + 20));
+            --color-base-10: color-mix(in oklab, var(--color-base-00) 90%, var(--color-base-100) 10%);
+            --color-base-20: color-mix(in oklab, var(--color-base-00) 80%, var(--color-base-100) 20%);
+            
+            --background-modifier-cover: var(--cc-gradient-center);
 
             --titlebar-background: transparent;
             --titlebar-background-focused: transparent;
@@ -157,7 +147,7 @@ body.theme-light {
         --h2-line-height: 1em;
         --h3-color: var(--text-muted);
         --h3-line-height: 1em;
-        --hr-color: rgb(from var(--color-accent) r g b / var(--cc-hr-opacity));
+        --hr-color: rgb(var(--color-accent));
         --italic-color: var(--text-muted);
         --text-normal: color-mix(in oklab, var(--color-accent) 30%, rgb(var(--mono-rgb-100)));
         --text-muted: color-mix(in oklab, var(--callout-color) var(--cc-alpha-1-2), rgb(var(--mono-rgb-100)));
@@ -182,8 +172,5 @@ body.theme-light {
         --nav-item-color-highlighted: var(--nav-item-color);
         --nav-item-color-hover: var(--nav-item-color);
         --nav-item-color-selected: var(--nav-item-color);
-
-        --text-normal: color-mix(in oklab, var(--color-accent) 30%, rgb(var(--mono-rgb-100)));
-        --text-muted: color-mix(in oklab, var(--callout-color) var(--cc-alpha-1-2), rgb(var(--mono-rgb-100)));
     }
 }

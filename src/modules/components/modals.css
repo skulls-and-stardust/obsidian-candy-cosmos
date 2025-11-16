@@ -14,7 +14,7 @@
     border: none;
     background-color: var(--background-secondary-alt);
     border-radius: var(--radius-m);
-    margin-top: var(--size-4-2);
+    margin-top: 8px;
     padding: var(--size-4-2);
 }
 
@@ -55,11 +55,6 @@
     text-transform: uppercase;
 }
 
-.installed-plugins-container {
-    padding-top: unset;
-    border-top: unset;
-}
-
 .modal-close-button {
     border-radius: 50%;
     color: var(--color-accent);
@@ -69,24 +64,17 @@
     position: absolute;
     right: 0;
     width: 36px;
-    &:hover {
-        background-color: unset;
-        color: var(--text-muted);
-    }
     &:before {
-        content: "X";
         display: block;
         font-family: var(--cc-font-secondary);
-        line-height: 1em;
+        font-weight: var(--font-bold);
         text-align: center;
-    }
-    svg {
-        display: none;
     }
 }
 
 /* menus */
 .menu {
+    backdrop-filter: var(--cc-filter);
     background-color: var(--cc-background-menu);
     border: var(--cc-style-01-border);
 }

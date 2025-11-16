@@ -1,3 +1,9 @@
+@property --callout-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: var(--color-accent);
+}
+
 .markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:hover {
     border-radius: var(--callout-radius);
 }
@@ -29,12 +35,12 @@
 }
 
 .callout {
-    --color-accent: if(style(--callout-color: var(--callout-default)) or style(--callout-color: var(--callout-quote)): var(--callout-color); else: rgb(var(--callout-color)));
+    --color-accent: var(--callout-color);
     background-color: rgb(from var(--color-accent) r g b / var(--cc-alpha-1-8));
-    border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+    border-color: rgb(from var(--callout-color) r g b / var(--callout-border-opacity));
     position: relative;
 }
 
 .callout-title {
-    color: var(--color-accent);
+    color: var(--callout-color);
 }
