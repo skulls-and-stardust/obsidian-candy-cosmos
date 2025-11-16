@@ -17,31 +17,29 @@ body:not(.is-mobile) .sidebar-toggle-button {
         left: 0;
         top: unset;
         .clickable-icon {
-            right: 0;
-            transform: scaleX(-1) translateY(-50%);
+            margin-left: var(--size-4-3);
+            right: var(--size-4-1);
         }
     }
     &.mod-right {
         border-top-left-radius: var(--radius-s);
         right: 0;
         .clickable-icon {
-            left: 0;
-            transform: translateY(-50%);
+            left: var(--size-4-1);
+            margin-right: var(--size-4-3);
         }
     }
     .clickable-icon {
-        border-radius: 0;
+        background-color: var(--icon-color);
+        border-radius: 2px;
+        cursor: pointer;
+        height: 60%;
         padding: 0;
         position: absolute;
-        transform: translateY(-50%);
-        top: 50%;
+        top: 20%;
+        width: 8px;
         svg {
-            aspect-ratio: 1;
-            height: calc(var(--cc-footer-height) - var(--cc-border-l));
-            width: auto;
-            rect:first-of-type {
-                display: none;
-            }
+            display: none;
         }
     }
 }
@@ -88,7 +86,6 @@ body:not(.is-mobile) .workspace-ribbon.is-collapsed .sidebar-toggle-button.mod-l
         opacity: var(--cc-alpha-1-2);
         position: absolute;
         width: 50%;
-        z-index: var(--layer-sidedock);
     }
 }
 

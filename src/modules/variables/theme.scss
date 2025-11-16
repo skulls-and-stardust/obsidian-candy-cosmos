@@ -16,6 +16,8 @@ body {
     --cc-heading-depth: 0.1em;
     --cc-heading-underline-width: var(--cc-border-l);
 
+    --cc-hr-opacity: var(--cc-alpha-1-2);
+
     /* foundations */
     --cc-alpha-1-8: 12.5%;
     --cc-alpha-1-4: 25%;
@@ -68,6 +70,13 @@ body.theme-light {
     --cc-button-box-shadow: 0 var(--cc-input-depth) var(--cc-accent-darker);
     
     /* editor */
+    --cc-inline-title-shadow: linear-gradient(to right,
+        rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-2)),
+        rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2)),
+        rgb(from var(--cc-accent-03) r g b / var(--cc-alpha-1-2)),
+        rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2)),
+        rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-2)));
+    
     /* foundations */
     --cc-accent-01: var(--color-accent);
     --cc-accent-02: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 1)) s l);
@@ -103,7 +112,7 @@ body.theme-light {
         rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-4)),
         rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-4)));
 
-    --cc-filter: blur(12px) contrast(75%);
+    --cc-filter: contrast(75%);
 
     --cc-style-01-background: var(--cc-accent-faint);
     --cc-style-01-border: var(--cc-border-m) dashed var(--background-modifier-border);
@@ -111,7 +120,7 @@ body.theme-light {
     /* plugins */
     /* window */
     --cc-background-footer: color-mix(in oklab, var(--color-accent) 60%, var(--background-primary)), color-mix(in oklab, var(--cc-accent-02) 60%, var(--background-primary));
-    --cc-background-menu: var(--cc-accent-muted);
+    --cc-background-menu: color-mix(in oklab, var(--color-accent) var(--cc-alpha-1-4), var(--background-primary));
     --cc-background-window: var(--background-modifier-cover);
 
     --cc-sidebar-background: var(--background-primary);
@@ -123,6 +132,13 @@ body.theme-light {
         --cc-button-box-shadow: 0 var(--cc-input-depth) var(--cc-accent-darker);
 
         /* editor */
+        --cc-inline-title-shadow: linear-gradient(to right,
+            rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-2)),
+            rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2)),
+            rgb(from var(--cc-accent-03) r g b / var(--cc-alpha-1-2)),
+            rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2)),
+            rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-2)));
+
         /* foundations */
         --cc-accent-01: var(--color-accent);
         --cc-accent-02: hsl(from var(--color-accent) calc(h + (var(--cc-color-step) * 1)) s l);
@@ -158,7 +174,7 @@ body.theme-light {
             color-mix(in oklab, var(--cc-accent-03) 30%, var(--color-base-00)),
             color-mix(in oklab, var(--cc-accent-04) 30%, var(--color-base-00)));
 
-        --cc-filter: blur(12px) contrast(75%) brightness(75%);
+        --cc-filter: contrast(75%) brightness(75%);
 
         --cc-style-01-background: var(--cc-accent-faint);
         --cc-style-01-border: var(--cc-border-m) dashed var(--background-modifier-border);
@@ -166,7 +182,7 @@ body.theme-light {
         /* plugins */
         /* window */
         --cc-background-footer: color-mix(in oklab, var(--color-accent) 60%, var(--background-primary)), color-mix(in oklab, var(--cc-accent-02) 60%, var(--background-primary));
-        --cc-background-menu: var(--cc-accent-muted);
+        --cc-background-menu: color-mix(in oklab, var(--color-accent) var(--cc-alpha-1-4), var(--background-primary));
         --cc-background-window: var(--background-modifier-cover);
 
         --cc-footer-background: none;

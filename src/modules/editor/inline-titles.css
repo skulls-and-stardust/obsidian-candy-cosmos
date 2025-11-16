@@ -1,14 +1,9 @@
 .inline-title {
-    background: linear-gradient(to right,
-        rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-2)),
-        rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2)),
-        rgb(from var(--cc-accent-03) r g b / var(--cc-alpha-1-2)),
-        rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2)),
-        rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-2)));
+    background: var(--cc-inline-title-shadow);
     background-clip: text;
     color: transparent;
     margin-bottom: var(--size-4-3);
     position: relative;
     text-align: center;
-    text-shadow: 0 calc(var(--cc-heading-depth) * -1) var(--text-normal);
+    text-shadow: 0 calc(var(--cc-heading-depth) * -1) var(--text-normal); 
 }

@@ -117,7 +117,9 @@ body {
 
     /* window */
     --divider-color: transparent;
-    --divider-vertical-height: calc(100% - var(--header-height) - var(--cc-footer-height));
+    --divider-width: 2px;
+    --divider-width-hover: 2px;
+    --divider-vertical-height: calc(100% - var(--header-height) - var(--cc-footer-height) - var(--cc-pane-gap-outer));
 
     --menu-border-width: var(--cc-border-s);
 
@@ -148,19 +150,7 @@ body.theme-light {
     --input-shadow-hover: none;
 
     /* editor */
-    --callout-bug: var(--color-red);
     --callout-default: var(--color-accent);
-    --callout-error: var(--color-red);
-    --callout-example: var(--color-purple);
-    --callout-fail: var(--color-red);
-    --callout-important: var(--color-yellow);
-    --callout-info: var(--color-blue);
-    --callout-question: var(--color-orange);
-    --callout-success: var(--color-green);
-    --callout-summary: var(--color-cyan);
-    --callout-tip: var(--color-cyan);
-    --callout-todo: var(--color-blue);
-    --callout-warning: var(--color-yellow);
     --callout-quote: var(--color-base-50);
 
     --code-background: var(--cc-accent-faint);
@@ -174,7 +164,7 @@ body.theme-light {
     --code-tag: color-mix(in oklab, var(--color-red) var(--cc-alpha-3-4), var(--text-normal));
     --code-value: color-mix(in oklab, var(--color-purple) var(--cc-alpha-3-4), var(--text-normal));
 
-    --hr-color: var(--color-accent);
+    --hr-color: rgb(from var(--color-accent) r g b / var(--cc-hr-opacity));
 
     --tag-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
 	--tag-background-hover: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-3-4));
@@ -198,6 +188,8 @@ body.theme-light {
     --search-result-background: var(--cc-accent-muted);
 
     /* window */
+    --divider-color-hover: var(--background-modifier-border);
+
     --ribbon-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
 
     --scrollbar-thumb-bg: var(--cc-accent-faint);
@@ -230,19 +222,7 @@ body.theme-light {
         --input-shadow-hover: none;
 
         /* editor */
-        --callout-bug: var(--color-red);
         --callout-default: var(--color-accent);
-        --callout-error: var(--color-red);
-        --callout-example: var(--color-purple);
-        --callout-fail: var(--color-red);
-        --callout-important: var(--color-yellow);
-        --callout-info: var(--color-blue);
-        --callout-question: var(--color-orange);
-        --callout-success: var(--color-green);
-        --callout-summary: var(--color-cyan);
-        --callout-tip: var(--color-cyan);
-        --callout-todo: var(--color-blue);
-        --callout-warning: var(--color-yellow);
         --callout-quote: var(--color-base-50);
 
         --code-background: var(--cc-accent-faint);
@@ -256,7 +236,7 @@ body.theme-light {
         --code-tag: color-mix(in oklab, var(--color-red) var(--cc-alpha-3-4), var(--text-normal));
         --code-value: color-mix(in oklab, var(--color-purple) var(--cc-alpha-3-4), var(--text-normal));
 
-        --hr-color: var(--color-accent);
+        --hr-color: rgb(from var(--color-accent) r g b / var(--cc-hr-opacity));
 
         --tag-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
         --tag-background-hover: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-3-4));
@@ -280,6 +260,8 @@ body.theme-light {
         --search-result-background: var(--cc-accent-muted);
 
         /* window */
+        --divider-color-hover: var(--background-modifier-border);
+
         --ribbon-background: rgb(from var(--cc-accent-02) r g b / var(--cc-alpha-1-2));
 
         --scrollbar-thumb-bg: var(--cc-accent-faint);

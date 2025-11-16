@@ -3,9 +3,8 @@
     padding: 0;
 }
 
-.workspace-drawer-backdrop {
-    background: var(--cc-gradient-center);
-    opacity: var(--cc-alpha-3-4) !important;
+.workspace-drawer-backdrop, body.is-phone .suggestion-bg {
+    background: var(--background-primary) var(--cc-gradient-center)
 }
 
 .workspace-drawer-ribbon {
@@ -79,7 +78,7 @@
 
 /* phones */
 .is-phone .menu {
-    background-color: var(--cc-style-01-background);
+    background-color: var(--cc-background-menu);
     border: var(--cc-style-01-border);
     border-bottom: none;
 }
