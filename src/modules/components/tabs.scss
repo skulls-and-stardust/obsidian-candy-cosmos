@@ -29,7 +29,6 @@
 }
 
 .workspace-tab-header-new-tab {
-    flex-grow: 3;
     margin-inline-start: calc(var(--size-4-4) * -1);
     padding-left: 0;
     .clickable-icon {
@@ -56,8 +55,12 @@ body:not(.is-tablet) .workspace.is-left-sidedock-open .workspace-tabs .workspace
     box-shadow: none;
 }
 
-.workspace-tab-header-spacer {
+.mod-sidedock .workspace-tab-header-spacer {
     display: none;
+}
+
+.mod-root .workspace-tab-header-spacer {
+    flex-grow: 3;
 }
 
 .workspace-tab-header-container-inner {

@@ -1,6 +1,6 @@
 .tree-item-self .iconic-icon {
     --icon-size: var(--icon-m);
-    color: color-mix(in oklab, var(--color-accent) 50%, rgb(var(--mono-rgb-100)) 50%);
+    color: inherit;
     width: var(--icon-size);
 }
 
@@ -8,6 +8,10 @@
     --icon-size: var(--icon-m);
 }
 
-.tree-item-self .iconic-icon {
-    color: inherit;
+.iconic-title-wrapper .iconic-icon {
+    filter: drop-shadow(0 var(--cc-heading-depth) rgb(from var(--cc-accent-01) r g b / var(--cc-alpha-1-2)));
+}
+
+.iconic-title-wrapper {
+    justify-content: center;
 }

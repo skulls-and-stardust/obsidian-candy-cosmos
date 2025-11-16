@@ -3,6 +3,10 @@
 @use "modules/components/buttons";
 /* --- Modals --- */
 @use "modules/components/modals";
+/* --- Navigation --- */
+@use "modules/components/navigation";
+/* --- Popovers --- */
+@use "modules/components/popovers";
 /* --- Prompts --- */
 @use "modules/components/prompts";
 /* --- Tabs --- */
@@ -72,6 +76,12 @@
 @use "modules/plugins/community/calendar";
 /* --- Calendarium --- */
 @use "modules/plugins/community/calendarium";
+/* --- Dice Roller --- */
+@use "modules/plugins/community/dice-roller";
+/* --- Editing Toolbar --- */
+@use "modules/plugins/community/editing-toolbar";
+/* --- Fanatsy Statblocks --- */
+@use "modules/plugins/community/fantasy-statblocks";
 /* --- Iconic --- */
 @use "modules/plugins/community/iconic";
 /* --- Kanban --- */
@@ -92,6 +102,8 @@
 /**/
 /**/
 /* ----------- 8. WINDOW ----------- */
+/* --- Divider --- */
+@use "modules/window/divider";
 /* --- Ribbon --- */
 @use "modules/window/ribbon";
 /* --- Sidebar --- */

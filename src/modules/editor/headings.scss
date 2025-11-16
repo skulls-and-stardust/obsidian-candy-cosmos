@@ -1,8 +1,7 @@
 @mixin heading-style-01($color, $level) {
     border-bottom: calc(var(--cc-heading-underline-width) + var(--cc-heading-depth)) solid transparent;
     color: color-mix(in oklab, $color 40%, rgb(var(--mono-rgb-100)));
-    margin-left: calc(var(--file-margins) * -1) !important;
-    padding: 0.75em 1em 0.125em var(--file-margins);
+    padding: 0.75em 1em 0.125em 0;
     position: relative;
     text-shadow: 0 var(--cc-heading-depth) rgb(from $color r g b / var(--cc-alpha-1-2));
     &:before {
@@ -17,9 +16,13 @@
         box-shadow: 0 var(--cc-heading-depth) rgb(from $color r g b / var(--cc-alpha-1-2));
         content: "";
         height: var(--cc-heading-underline-width);
-        left: var(--size-4-1);
+        left: var(--size-4-2);
+        margin-left: calc(var(--file-margins) * -1);
         position: absolute;
-        width: calc(100% + (var(--file-margins) - var(--size-4-1)));
+        width: calc(100% + (var(--file-margins) - var(--size-4-2)));
+    }
+    .cm-fold-indicator {
+        --collapse-icon-color: currentColor;
     }
 }
 
@@ -31,16 +34,20 @@
     border-radius: 0 1em 1em 0;
     color: color-mix(in oklab, $color 40%, rgb(var(--mono-rgb-100)) 60%);
     text-align: right;
-    margin-left: calc((var(--file-margins) * -1) + var(--size-4-1)) !important;
-    padding: 0.125em 1em 0.125em var(--file-margins);
+    padding: 0.125em 1em 0.125em 0;
     &:before {
         content: "H" + $level + " ";
         font-size: clamp(12px, 0.5em, 0.75em);
         opacity: 0.5;
     }
+    .cm-fold-indicator {
+        --collapse-icon-color: currentColor;
+    }
 }
 
-.cm-line.HyperMD-header, .inline-title:not([data-level]), h1, h2, h3, h4, h5, h6, .cm-strong, strong, .workspace-drawer-vault-name, .workspace-drawer-header-name, .setting-item-heading .setting-item-name, .callout-title, .vertical-tab-header-group-title {
+
+
+.inline-title:not([data-level]), .cm-strong, strong, .workspace-drawer-vault-name, .workspace-drawer-header-name, .setting-item-heading .setting-item-name, .callout-title, .vertical-tab-header-group-title {
     font-family: var(--cc-font-secondary);
     font-weight: var(--cc-font-secondary-weight);
     letter-spacing: var(--cc-font-secondary-spacing-letter);
@@ -49,6 +56,9 @@
 
 .cm-line.HyperMD-header, h1, h2, h3, h4, h5, h6 {
     --p-spacing: 0;
+    font-weight: var(--cc-font-secondary-weight);
+    letter-spacing: var(--cc-font-secondary-spacing-letter);
+    word-spacing: var(--cc-font-secondary-spacing-word);
 }
 
 .markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal {

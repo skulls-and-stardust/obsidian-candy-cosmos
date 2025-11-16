@@ -1,3 +1,4 @@
+![A screenshot of the dark version of the Candy Cosmos theme on an Obsidian desktop client.](thumbnail.png)
 # Candy Cosmos
 "Candy Cosmos" is my first ever theme for Obsidian, the result of a few months of countless reiterating over the CSS until I had something that catered to my aesthetics: bubbly UI with a both dark and vibrant palette with enough flexibility in colors to cater to a broader audience.
 
@@ -29,6 +30,9 @@ The unique buttons and transparent elements of the theme can result in plugins t
 Patched Plugins
 - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
 - [Calendarium](https://github.com/javalent/calendarium)
+- [Dice Roller](https://github.com/javalent/dice-roller)
+- [Editing Toolbar](https://github.com/PKM-er/obsidian-editing-toolbar)
+- [Fantasy Statblocks](https://github.com/javalent/fantasy-statblocks)
 - [Iconic](https://github.com/gfxholo/iconic)
 - [Kanban](https://github.com/mgmeyers/obsidian-kanban)
 - [Longform](https://github.com/kevboh/longform)
