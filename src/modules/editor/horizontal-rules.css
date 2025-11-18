@@ -1,6 +1,4 @@
-hr:not(.workspace-leaf-resize-handle) {
-    border: none;
-	border-top: var(--hr-thickness) dotted;
-	border-color: var(--hr-color);
-	margin: 0 25% !important;
+:is(.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal) hr {
+	border-top: var(--hr-thickness) dotted var(--hr-color);
+	margin: 0 25%;
 }

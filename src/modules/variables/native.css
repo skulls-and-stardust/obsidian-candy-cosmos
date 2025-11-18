@@ -26,12 +26,16 @@ body {
     --toggle-thumb-width: 17px;
 
     /* editor */
+    --blockquote-border-thickness: 0;
+
     --callout-border-width: var(--cc-border-l);
     --callout-title-weight: var(--font-normal);
     --callout-radius: var(--radius-xl);
 
     --checkbox-color-hover: hsl(from var(--checkbox-color) h calc(s + 20) calc(l + 20));
     --checklist-done-color: var(--cc-accent-02);
+
+    --code-border-width: var(--cc-border-s);
 
     --embed-background: hsl(from var(--background-primary) h calc(s - 5) calc(l - 5));
     --embed-border-end: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
@@ -150,6 +154,8 @@ body.theme-light {
     --input-shadow-hover: none;
 
     /* editor */
+    --blockquote-background-color: var(--cc-accent-faint);
+
     --callout-default: var(--color-accent);
     --callout-quote: var(--color-base-50);
 
@@ -222,10 +228,12 @@ body.theme-light {
         --input-shadow-hover: none;
 
         /* editor */
+        --blockquote-background-color: var(--cc-accent-faint);
+
         --callout-default: var(--color-accent);
         --callout-quote: var(--color-base-50);
 
-        --code-background: var(--cc-accent-faint);
+        --code-background: hsl(from var(--background-primary) h s calc(l - 3));
         --code-function: color-mix(in oklab, var(--color-yellow) var(--cc-alpha-3-4), var(--text-normal));
         --code-important: color-mix(in oklab, var(--color-orange) var(--cc-alpha-3-4), var(--text-normal));
         --code-keyword: color-mix(in oklab, var(--color-pink) var(--cc-alpha-3-4), var(--text-normal));

@@ -10,9 +10,9 @@
     background-color: transparent;
 }
 
-.mod-root {
+.workspace-split.mod-root {
     padding-bottom: calc(var(--cc-footer-height) + var(--cc-pane-gap-outer));
-    background-color: transparent !important;
+    background-color: transparent;
     margin: 0 var(--cc-pane-gap-outer);
 
     .workspace-leaf {

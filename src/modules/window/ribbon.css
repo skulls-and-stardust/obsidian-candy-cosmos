@@ -24,7 +24,7 @@ body:not(.is-mobile) {
         border-radius: 4px 4px 0 0;
         color: hsl(from var(--text-on-accent) calc(h + var(--cc-color-step)) s l);
         flex-grow: 1;
-        margin: 0 !important;
+        margin: 0;
     }
 
     @media (hover: hover) {

@@ -1,0 +1,42 @@
+blockquote > p:first-child::before, blockquote > p:last-of-type::after {
+    color: var(--text-muted);
+    font-family: var(--cc-font-secondary);
+    font-size: 3em;
+    line-height: 0.5em;
+    position: absolute;
+}
+
+blockquote > p:first-child::before {
+    content: "\201C";
+    left: -0.66em;
+}
+
+blockquote > p:last-of-type::after {
+    bottom: 0.25em;
+    content: "\201E";
+    right: -0.66em;
+}
+
+.markdown-rendered blockquote {
+    border-radius: var(--radius-m);
+    margin-inline-start: var(--size-4-12);
+    margin-inline-end: var(--size-4-12);
+    padding: var(--size-4-2);
+    position: relative;
+    &:first-letter {
+        line-height: 0.5em;
+        font-size: 1.5em;
+        font-weight: var(--font-normal);
+    }
+    &:first-line {
+        font-variant: small-caps;
+        font-size: 1.25em;
+        font-weight: var(--font-semibold);
+    }
+}
+
+blockquote cite {
+    color: var(--text-muted);
+    display: block;
+    text-align: right;
+}

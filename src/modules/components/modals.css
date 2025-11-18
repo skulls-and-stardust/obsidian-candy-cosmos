@@ -1,8 +1,11 @@
 /* general */
 .modal {
     border-radius: var(--cc-pane-radius);
-    box-shadow: none !important;
     filter: drop-shadow(0 0 36px var(--cc-background-faint));
+}
+
+.modal-container.mod-dim .modal {
+    box-shadow: none;
 }
 
 .modal.mod-settings {

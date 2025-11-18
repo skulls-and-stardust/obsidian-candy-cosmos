@@ -8,7 +8,7 @@ body:not(.is-mobile) .sidebar-toggle-button {
     bottom: 0;
     height: var(--cc-footer-height);
     overflow: hidden;
-    position: fixed !important;
+    position: fixed;
     transition: width var(--anim-duration-slow);
     width: var(--cc-footer-sidebar-width);
     z-index: var(--layer-status-bar);
