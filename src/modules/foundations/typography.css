@@ -18,7 +18,7 @@ mark {
     color: var(--text-normal);
 }
 
-.markdown-source-view.mod-cm6 .cm-content .cm-active {
+.markdown-source-view.mod-cm6 .cm-content .cm-active:not(.HyperMD-quote) {
     background-color: var(--cc-accent-faint);
     border-radius: 2px;
     &:before {

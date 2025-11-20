@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* --------- 1. COMPONENTS --------- */
 /* --- Buttons --- */
 :not(.calendarium-preset-container, #editingToolbarModalBar, #editingToolbarPopoverBar, .subitem) > button:not(.clickable-icon, .mb-button-inner, .tab-button, .editingToolbarCommandItem), .view-header-left .clickable-icon, .view-header .clickable-icon[aria-label="More options"] {
@@ -40,8 +41,11 @@
 /* general */
 .modal {
   border-radius: var(--cc-pane-radius);
-  box-shadow: none !important;
   filter: drop-shadow(0 0 36px var(--cc-background-faint));
+}
+
+.modal-container.mod-dim .modal {
+  box-shadow: none;
 }
 
 .modal.mod-settings {
@@ -495,6 +499,69 @@ body:not(.is-tablet) .workspace.is-left-sidedock-open .workspace-tabs .workspace
 /**/
 /**/
 /* ----------- 3. EDITOR ----------- */
+/* --- Blockquotes --- */
+:is(blockquote > p:first-child, .markdown-source-view.mod-cm6.is-live-preview :not(.HyperMD-quote) + .HyperMD-quote)::before, :is(blockquote > p:last-of-type, .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:has(+ :not(.HyperMD-quote)))::after {
+  color: var(--text-muted);
+  font-family: var(--cc-font-secondary);
+  font-size: 3em;
+  line-height: 0.5em;
+  position: absolute;
+  text-indent: 0;
+}
+
+:is(blockquote > p:first-child, .markdown-source-view.mod-cm6.is-live-preview :not(.HyperMD-quote) + .HyperMD-quote)::before {
+  content: "“";
+  left: -0.66em;
+}
+
+:is(blockquote > p:last-of-type, .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:has(+ :not(.HyperMD-quote)))::after {
+  bottom: 0.25em;
+  content: "„";
+  right: -0.66em;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview :not(.HyperMD-quote) + .HyperMD-quote {
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+  position: relative;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:has(+ :not(.HyperMD-quote)) {
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+  position: relative;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote, .markdown-rendered blockquote {
+  margin-inline-start: var(--size-4-12) !important;
+  margin-inline-end: var(--size-4-12) !important;
+}
+
+.markdown-rendered blockquote {
+  border-radius: var(--radius-m);
+  padding: var(--size-4-2);
+  position: relative;
+  &:first-letter {
+    line-height: 0.5em;
+    font-size: 1.5em;
+    font-weight: var(--font-normal);
+  }
+  &:first-line {
+    font-variant: small-caps;
+    font-size: 1.25em;
+    font-weight: var(--font-semibold);
+  }
+}
+
+blockquote cite {
+  color: var(--text-muted);
+  display: block;
+  text-align: right;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
+  content: unset;
+  width: unset;
+}
+
 /* --- Callouts --- */
 .markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:hover {
   border-radius: var(--callout-radius);
@@ -540,14 +607,16 @@ body:not(.is-tablet) .workspace.is-left-sidedock-open .workspace-tabs .workspace
 /* --- Embeds --- */
 .inline-embed {
   border-radius: var(--radius-l);
-  box-shadow: 0 var(--cc-input-depth) hsl(from var(--background-primary) h calc(s - 10) calc(l - 10)) inset;
+  box-shadow: 0 var(--cc-input-depth) hsl(from var(--background-primary) h calc(s - 6) calc(l - 6)) inset;
   .embed-title {
     display: none;
   }
 }
 
 .image-embed > img {
+  border: var(--cc-border-s) solid var(--background-modifier-border);
   border-radius: var(--radius-m);
+  max-width: 100%;
 }
 
 /* --- Headings --- */
@@ -718,11 +787,9 @@ body:not(.is-tablet) .workspace.is-left-sidedock-open .workspace-tabs .workspace
 }
 
 /* --- Horizontal Rules --- */
-hr:not(.workspace-leaf-resize-handle) {
-  border: none;
-  border-top: var(--hr-thickness) dotted;
-  border-color: var(--hr-color);
-  margin: 0 25% !important;
+:is(.markdown-source-view, .markdown-reading-view, .v-version-content-preview, .modal) hr {
+  border-top: var(--hr-thickness) dotted var(--hr-color);
+  margin: 0 25%;
 }
 
 /* --- Inline Titles --- */
@@ -1135,7 +1202,7 @@ mark {
   color: var(--text-normal);
 }
 
-.markdown-source-view.mod-cm6 .cm-content .cm-active {
+.markdown-source-view.mod-cm6 .cm-content .cm-active:not(.HyperMD-quote) {
   background-color: var(--cc-accent-faint);
   border-radius: 2px;
   &:before {
@@ -1645,15 +1712,17 @@ body {
   --toggle-thumb-height: 15px;
   --toggle-thumb-width: 17px;
   /* editor */
+  --blockquote-border-thickness: 0;
   --callout-border-width: var(--cc-border-l);
   --callout-title-weight: var(--font-normal);
   --callout-radius: var(--radius-xl);
   --checkbox-color-hover: hsl(from var(--checkbox-color) h calc(s + 20) calc(l + 20));
   --checklist-done-color: var(--cc-accent-02);
-  --embed-background: hsl(from var(--background-primary) h calc(s - 5) calc(l - 5));
-  --embed-border-end: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
-  --embed-border-start: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
-  --embed-border-top: var(--border-width) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
+  --code-border-width: var(--cc-border-s);
+  --embed-background: hsl(from var(--background-primary) h s calc(l - 3));
+  --embed-border-end: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 6) calc(l - 6));
+  --embed-border-start: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 6) calc(l - 6));
+  --embed-border-top: var(--border-width) solid hsl(from var(--background-primary) h calc(s - 6) calc(l - 6));
   --embed-padding: var(--size-4-3);
   --h1-font: var(--cc-font-secondary);
   --h1-weight: var(--font-normal);
@@ -1739,6 +1808,7 @@ body.theme-light {
   --input-shadow: none;
   --input-shadow-hover: none;
   /* editor */
+  --blockquote-background-color: var(--cc-accent-faint);
   --callout-default: var(--color-accent);
   --callout-quote: var(--color-base-50);
   --code-background: var(--cc-accent-faint);
@@ -1795,9 +1865,10 @@ body.theme-light {
     --input-shadow: none;
     --input-shadow-hover: none;
     /* editor */
+    --blockquote-background-color: var(--cc-accent-faint);
     --callout-default: var(--color-accent);
     --callout-quote: var(--color-base-50);
-    --code-background: var(--cc-accent-faint);
+    --code-background: hsl(from var(--background-primary) h s calc(l - 3));
     --code-function: color-mix(in oklab, var(--color-yellow) var(--cc-alpha-3-4), var(--text-normal));
     --code-important: color-mix(in oklab, var(--color-orange) var(--cc-alpha-3-4), var(--text-normal));
     --code-keyword: color-mix(in oklab, var(--color-pink) var(--cc-alpha-3-4), var(--text-normal));
@@ -2060,7 +2131,7 @@ body:not(.is-mobile) {
     border-radius: 4px 4px 0 0;
     color: hsl(from var(--text-on-accent) calc(h + var(--cc-color-step)) s l);
     flex-grow: 1;
-    margin: 0 !important;
+    margin: 0;
   }
 }
 @media (hover: hover) {
@@ -2082,7 +2153,7 @@ body:not(.is-mobile) .sidebar-toggle-button {
   bottom: 0;
   height: var(--cc-footer-height);
   overflow: hidden;
-  position: fixed !important;
+  position: fixed;
   transition: width var(--anim-duration-slow);
   width: var(--cc-footer-sidebar-width);
   z-index: var(--layer-status-bar);
@@ -2240,9 +2311,9 @@ body {
   background-color: transparent;
 }
 
-.mod-root {
+.workspace-split.mod-root {
   padding-bottom: calc(var(--cc-footer-height) + var(--cc-pane-gap-outer));
-  background-color: transparent !important;
+  background-color: transparent;
   margin: 0 var(--cc-pane-gap-outer);
   .workspace-leaf {
     border-radius: var(--cc-pane-radius);

@@ -1,26 +1,40 @@
-blockquote > p:first-child::before, blockquote > p:last-of-type::after {
+:is(blockquote > p:first-child, .markdown-source-view.mod-cm6.is-live-preview :not(.HyperMD-quote) + .HyperMD-quote)::before, :is(blockquote > p:last-of-type, .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:has(+ :not(.HyperMD-quote)))::after {
     color: var(--text-muted);
     font-family: var(--cc-font-secondary);
     font-size: 3em;
     line-height: 0.5em;
     position: absolute;
+    text-indent: 0;
 }
 
-blockquote > p:first-child::before {
+:is(blockquote > p:first-child, .markdown-source-view.mod-cm6.is-live-preview :not(.HyperMD-quote) + .HyperMD-quote)::before {
     content: "\201C";
     left: -0.66em;
 }
 
-blockquote > p:last-of-type::after {
+:is(blockquote > p:last-of-type, .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:has(+ :not(.HyperMD-quote)))::after {
     bottom: 0.25em;
     content: "\201E";
     right: -0.66em;
 }
 
+.markdown-source-view.mod-cm6.is-live-preview :not(.HyperMD-quote) + .HyperMD-quote {
+    border-radius: var(--radius-m) var(--radius-m) 0 0;
+    position: relative;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:has(+ :not(.HyperMD-quote)) {
+    border-radius: 0 0 var(--radius-m) var(--radius-m);
+    position: relative;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote, .markdown-rendered blockquote {
+    margin-inline-start: var(--size-4-12) !important;
+    margin-inline-end: var(--size-4-12) !important;
+}
+
 .markdown-rendered blockquote {
     border-radius: var(--radius-m);
-    margin-inline-start: var(--size-4-12);
-    margin-inline-end: var(--size-4-12);
     padding: var(--size-4-2);
     position: relative;
     &:first-letter {
@@ -39,4 +53,9 @@ blockquote cite {
     color: var(--text-muted);
     display: block;
     text-align: right;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
+    content: unset;
+    width: unset;
 }

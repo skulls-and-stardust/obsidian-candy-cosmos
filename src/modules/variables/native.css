@@ -37,10 +37,10 @@ body {
 
     --code-border-width: var(--cc-border-s);
 
-    --embed-background: hsl(from var(--background-primary) h calc(s - 5) calc(l - 5));
-    --embed-border-end: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
-    --embed-border-start: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
-    --embed-border-top: var(--border-width) solid hsl(from var(--background-primary) h calc(s - 10) calc(l - 10));
+    --embed-background: hsl(from var(--background-primary) h s calc(l - 3));
+    --embed-border-end: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 6) calc(l - 6));
+    --embed-border-start: var(--cc-border-m) solid hsl(from var(--background-primary) h calc(s - 6) calc(l - 6));
+    --embed-border-top: var(--border-width) solid hsl(from var(--background-primary) h calc(s - 6) calc(l - 6));
     --embed-padding: var(--size-4-3);
 
     --h1-font: var(--cc-font-secondary);
