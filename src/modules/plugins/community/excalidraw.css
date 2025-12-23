@@ -1,0 +1,25 @@
+.excalidraw > * {
+    --input-border-color: transparent;
+    --icon-fill-color: var(--icon-color);
+    --island-bg-color: var(--color-base-10);
+    --sidebar-border-color: var(--background-modifier-border);
+    .Island:is(.App-toolbar, .dropdown-menu-container), .App-tray-menu {
+        background-color: var(--island-bg-color);
+        border: var(--cc-container-01-border);
+    }
+    .Island:not(.App-toolbar, .dropdown-menu-container), .zoom-actions {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .tray-misc-tools-container {
+        border-width: var(--cc-border-s);
+    }
+}
+
+.excalidraw-view {
+    border-radius: calc(var(--cc-pane-radius) - var(--cc-pane-padding));
+}
+
+.excalidraw-dirty {
+    color: var(--color-red);
+}

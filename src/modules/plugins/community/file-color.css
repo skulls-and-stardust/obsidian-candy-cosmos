@@ -1,0 +1,13 @@
+.file-color-type-background {
+    --color-accent: var(--file-color-color);
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .nav-files-container .file-color-file.file-color-type-background.file-color-cascade .nav-folder-title, .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .file-color-file.file-color-type-background.file-color-cascade .nav-file-title {
+    background-color: unset;
+    &:hover {
+        background-color: var(--nav-item-background-hover);
+    }
+    &.is-active {
+        background-color: var(--nav-item-background-active);
+    }
+}
