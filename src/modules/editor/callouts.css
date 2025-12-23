@@ -23,18 +23,60 @@
     --icon-stroke: var(--cc-collapse-stroke-width);
 }
 
-.callout-fold {
-    position: absolute;
-    right: var(--size-4-2);
-}
-
 .callout {
-    --color-accent: if(style(--callout-color: var(--callout-default)) or style(--callout-color: var(--callout-quote)): var(--callout-color); else: rgb(var(--callout-color)));
-    background-color: rgb(from var(--color-accent) r g b / var(--cc-alpha-1-8));
-    border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+    --color-accent: rgb(var(--callout-color));
+    background-color: transparent;
+    border: none;
+    padding: 0;
     position: relative;
 }
 
+.callout-title, .callout-content {
+    background-color: color-mix(in srgb, var(--color-accent) var(--cc-alpha-1-8), var(--background-primary));
+    border: var(--callout-border-width) solid rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+}
+
 .callout-title {
+    border-bottom: none;
+    border-radius: var(--callout-radius) var(--callout-radius) 0 0;
     color: var(--color-accent);
+    padding: var(--size-4-2) var(--size-4-3) 0;
+    position: relative;
+    width: fit-content;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        background-color: color-mix(in srgb, var(--color-accent) var(--cc-alpha-1-8), var(--background-primary));
+        height: var(--callout-border-width);
+        position: absolute;
+        left: 0;
+        bottom: calc(var(--callout-border-width) * -1);
+    }
+}
+
+.callout-content {
+    border-radius: var(--callout-radius);
+    border-top-left-radius: 0;
+    padding: var(--size-4-3) var(--size-4-3) var(--size-4-5);
+    > :first-child {
+        margin-top: 0;
+    }
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.callout-fold {
+    padding-inline-start: var(--size-4-2);
+    padding-inline-end: 0;
+}
+
+.callout.is-collapsed .callout-title {
+    border-radius: var(--callout-radius);
+    border: var(--callout-border-width) solid rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+    padding-bottom: var(--size-4-2);
+    &:after {
+        content: none;
+    }
 }

@@ -29,7 +29,7 @@ body {
     --blockquote-border-thickness: 0;
 
     --callout-border-width: var(--cc-border-l);
-    --callout-title-weight: var(--font-normal);
+    --callout-title-weight: var(--cc-font-secondary-weight);
     --callout-radius: var(--radius-xl);
 
     --checkbox-color-hover: hsl(from var(--checkbox-color) h calc(s + 20) calc(l + 20));
@@ -156,9 +156,6 @@ body.theme-light {
     /* editor */
     --blockquote-background-color: var(--cc-accent-faint);
 
-    --callout-default: var(--color-accent);
-    --callout-quote: var(--color-base-50);
-
     --code-background: var(--cc-accent-faint);
     --code-function: color-mix(in oklab, var(--color-yellow) var(--cc-alpha-3-4), var(--text-normal));
     --code-important: color-mix(in oklab, var(--color-orange) var(--cc-alpha-3-4), var(--text-normal));
@@ -229,9 +226,6 @@ body.theme-light {
 
         /* editor */
         --blockquote-background-color: var(--cc-accent-faint);
-
-        --callout-default: var(--color-accent);
-        --callout-quote: var(--color-base-50);
 
         --code-background: hsl(from var(--background-primary) h s calc(l - 3));
         --code-function: color-mix(in oklab, var(--color-yellow) var(--cc-alpha-3-4), var(--text-normal));
