@@ -1,24 +1,24 @@
-.tree-item:has(> .mod-collapsible) {
+.nav-folder, .tree-item:has(> .mod-collapsible) {
     --cc-nesting: 0;
-    .tree-item:has(> .mod-collapsible) {
+    .nav-folder, .tree-item:has(> .mod-collapsible) {
         --color-accent: var(--cc-accent-02);
         --cc-nesting: 1;
         &:last-child {
             margin-bottom: calc(var(--cc-nav-folder-border-width) * -1);
         }
-        .tree-item:has(> .mod-collapsible) {
+        .nav-folder, .tree-item:has(> .mod-collapsible) {
             --color-accent: var(--cc-accent-03);
             --cc-nesting: 2;
             &:last-child {
                 margin-bottom: calc(var(--cc-nav-folder-border-width) * -1);
             }
-            .tree-item:has(> .mod-collapsible) {
+            .nav-folder, .tree-item:has(> .mod-collapsible) {
                 --color-accent: var(--cc-accent-04);
                 --cc-nesting: 3;
                 &:last-child {
                     margin-bottom: calc(var(--cc-nav-folder-border-width) * -1);
                 }
-                .tree-item:has(> .mod-collapsible) {
+                .nav-folder, .tree-item:has(> .mod-collapsible) {
                     --color-accent: var(--cc-accent-05);
                     --cc-nesting: 4;
                     &:last-child {
@@ -29,7 +29,6 @@
         }
     }
 }
-
 
 /* parents */
 .collapse-icon svg.svg-icon {

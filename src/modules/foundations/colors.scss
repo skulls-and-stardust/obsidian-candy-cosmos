@@ -169,7 +169,7 @@ body.theme-light {
         @include references.colors-accent;
     }
     .nav-folder-title {
-        --nav-collapse-icon-color: color-mix(in oklab, var(--color-accent) var(--cc-alpha-1-2), rgb(var(--mono-rgb-100)));
+        --nav-collapse-icon-color: color-mix(in srgb, var(--color-accent) var(--cc-alpha-1-2), rgb(var(--mono-rgb-100)));
         --nav-collapse-icon-color-collapsed: var(--nav-collapse-icon-color);
     }
     .nav-folder-title, .tree-item-children {
