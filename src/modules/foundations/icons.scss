@@ -17,14 +17,6 @@
     @include references.add-icon(var(--cc-icon-rocket));
 }
 
-.workspace-drawer-vault-actions > span:first-child {
-    @include references.add-icon(var(--cc-icon-satellite));
-}
-
-.workspace-drawer-vault-actions > span:last-child, .workspace-drawer-header-icon.mod-settings {
-    @include references.add-icon(var(--cc-icon-orbit));
-}
-
 [aria-label="Navigate back"] {
     @include references.add-icon(var(--cc-icon-arrow-left));
 }
@@ -34,6 +26,6 @@
 }
 
 .nav-buttons-container, [aria-label="Search settings"] {
-    --icon-color: var(--cc-accent-strong);
+    --icon-color: var(--text-faint);
     --icon-color-active: var(--text-muted);
 }
